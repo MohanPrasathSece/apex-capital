@@ -45,11 +45,17 @@ export function Nav() {
           {user ? (
             <>
               <Link to="/app" className="text-sm text-muted-foreground hover:text-foreground">
-                Dashboard
+                Learn Hub
+              </Link>
+              <Link
+                to="/trading"
+                className="text-sm text-muted-foreground hover:text-foreground ml-4"
+              >
+                Trading Bots
               </Link>
               <button
                 onClick={logout}
-                className="rounded-full px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground"
+                className="rounded-full px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground cursor-pointer"
               >
                 Sign out
               </button>

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/index";
 import AppGate from "./pages/app";
+import TradingTerminal from "./pages/trading";
 import PrivacyPolicy from "./pages/privacy";
 import TermsConditions from "./pages/terms";
 import { AuthProvider } from "./lib/auth";
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/app" element={<AppGate />} />
+          <Route path="/trading" element={<TradingTerminal />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsConditions />} />
         </Routes>
