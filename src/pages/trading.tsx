@@ -23,6 +23,7 @@ import {
   Layers,
   CheckCircle,
   HelpCircle,
+  RotateCcw,
 } from "lucide-react";
 
 export default function TradingTerminal() {
