@@ -142,8 +142,8 @@ function AppContent() {
           {/* Browser Grid */}
           <div className="grid md:grid-cols-[260px_1fr] min-h-[640px]">
             {/* Sidebar Navigation */}
-            <div className="bg-black/20 border-r border-white/5 p-4 flex flex-col gap-1 overflow-y-auto">
-              <div className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground/60 px-3 mb-2">
+            <div className="bg-black/20 border-b md:border-b-0 md:border-r border-white/5 p-4 flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-y-auto scrollbar-none shrink-0">
+              <div className="hidden md:block text-[10px] uppercase font-bold tracking-widest text-muted-foreground/60 px-3 mb-2">
                 Chapters
               </div>
               {tabs.map((tab, idx) => {
@@ -152,18 +152,18 @@ function AppContent() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(idx)}
-                    className={`flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-xl text-sm transition-all relative ${
+                    className={`flex items-center gap-3 w-auto md:w-full text-left px-3 py-2.5 rounded-xl text-sm transition-all relative shrink-0 ${
                       activeTab === idx
                         ? "text-primary bg-primary/15 font-medium"
                         : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                     }`}
                   >
                     <IconComponent className="h-4 w-4 shrink-0" />
-                    <span>{tab.label}</span>
+                    <span className="whitespace-nowrap">{tab.label}</span>
                     {activeTab === idx && (
                       <motion.div
                         layoutId="activeSideTab"
-                        className="absolute right-0 top-1/4 bottom-1/4 w-1 rounded-l-full bg-primary"
+                        className="absolute right-0 top-1/4 bottom-1/4 w-1 rounded-l-full bg-primary hidden md:block"
                       />
                     )}
                   </button>

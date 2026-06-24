@@ -60,7 +60,7 @@ export function SmartInvesting() {
             </div>
             <h3 className="mt-1 font-display text-2xl">Diversified by design</h3>
 
-            <div className="mt-8 flex items-center gap-8">
+            <div className="mt-8 flex flex-col sm:flex-row items-center gap-8">
               <div className="relative h-48 w-48 shrink-0">
                 <svg viewBox="0 0 100 100" className="-rotate-90">
                   {(() => {
@@ -98,7 +98,7 @@ export function SmartInvesting() {
                   </div>
                 </div>
               </div>
-              <div className="flex-1 space-y-3">
+              <div className="flex-1 w-full space-y-3">
                 {allocations.map((a, i) => (
                   <motion.div
                     key={a.label}
