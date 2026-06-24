@@ -564,6 +564,128 @@ function TerminalContent() {
         </div>
       </section>
 
+      {/* Section 1: Pre-Engineered Quant Directory */}
+      <section className="relative py-20 border-t border-white/5 bg-black/5">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12">
+            <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
+              Quant Directory
+            </div>
+            <h2 className="mt-3 text-3xl md:text-5xl">Pre-Engineered Strategy Profiles</h2>
+            <p className="mt-1 text-xs md:text-sm text-muted-foreground">
+              Explore standardized algorithms designed and backtested by our research desk.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {[
+              {
+                name: "Scalper Prime v2",
+                type: "Grid Strategy",
+                win: "92.4%",
+                profit: "+18.2%",
+                risk: "Medium",
+              },
+              {
+                name: "Arbitrage Cycle v4",
+                type: "Triangular Arbitrage",
+                win: "100%",
+                profit: "+8.4%",
+                risk: "Low",
+              },
+              {
+                name: "DCA Accumulator",
+                type: "Dollar-Cost Averaging",
+                win: "84.1%",
+                profit: "+24.8%",
+                risk: "Low",
+              },
+            ].map((b, i) => (
+              <div
+                key={i}
+                className="glass p-6 rounded-3xl border border-white/5 space-y-4 hover:border-primary/30 transition-all"
+              >
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h4 className="font-display text-2xl text-gradient">{b.name}</h4>
+                    <span className="text-[10px] text-muted-foreground uppercase font-mono">
+                      {b.type}
+                    </span>
+                  </div>
+                  <span
+                    className={`text-[10px] uppercase px-2 py-0.5 rounded-full ${b.risk === "Low" ? "bg-primary/10 text-primary" : "bg-yellow-400/10 text-yellow-400"}`}
+                  >
+                    {b.risk} Risk
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 border-t border-white/5 pt-4 text-xs font-mono">
+                  <div>
+                    <div className="text-[10px] text-muted-foreground">Simulated Win Rate</div>
+                    <div className="font-bold text-foreground mt-0.5">{b.win}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-muted-foreground">Backtest Yield</div>
+                    <div className="font-bold text-primary mt-0.5">{b.profit}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Algorithmic Safeguards & Risk Guardrails */}
+      <section className="relative py-20 border-t border-white/5 bg-black/10">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-12">
+            <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
+              Risk Guardrails
+            </div>
+            <h2 className="mt-3 text-3xl md:text-5xl">Structural Platform Safeguards</h2>
+            <p className="mt-1 text-xs md:text-sm text-muted-foreground">
+              Institutional parameter limitations protecting assets against tail-risk anomalies.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-4">
+            {[
+              {
+                title: "Slippage Control",
+                desc: "Automated execution halts if market spread exceeds 0.15% to protect buy/sell entry rates.",
+                icon: Sliders,
+              },
+              {
+                title: "API Locked Actions",
+                desc: "Write keys are constrained to specific trusted addresses. Direct withdrawal via API is prohibited.",
+                icon: Shield,
+              },
+              {
+                title: "Circuit Breakers",
+                desc: "Monitors extreme market swings and automatically triggers safety pauses for running bots.",
+                icon: Activity,
+              },
+              {
+                title: "Maximum Allocation Caps",
+                desc: "Enforces strategy exposure limits (e.g. max 25% account value per single bot asset).",
+                icon: Layers,
+              },
+            ].map((guard, i) => {
+              const IconComp = guard.icon;
+              return (
+                <div
+                  key={i}
+                  className="glass p-5 rounded-2xl border border-white/5 hover:bg-white/[0.03] transition-colors space-y-3"
+                >
+                  <div className="h-10 w-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                    <IconComp className="h-5 w-5" />
+                  </div>
+                  <h4 className="font-display text-xl">{guard.title}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{guard.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Main Bot Enquiry Form Section */}
       <BotEnquirySection />
       <Footer />
@@ -578,7 +700,6 @@ function BotEnquirySection() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [strategy, setStrategy] = useState("");
   const [message, setMessage] = useState("");
 
   const [loading, setLoading] = useState(false);
@@ -608,7 +729,7 @@ function BotEnquirySection() {
 
     setLoading(true);
 
-    const description = `Strategy: ${strategy || "Unspecified"}. Message: ${message || "None"}`;
+    const description = message || "";
 
     try {
       const res = await fetch("/api/crm", {
@@ -739,31 +860,6 @@ function BotEnquirySection() {
                   {errors.phone && (
                     <span className="text-[10px] text-red-400 pl-2">{errors.phone}</span>
                   )}
-                </div>
-
-                {/* Select Strategy */}
-                <div className="relative">
-                  <select
-                    value={strategy}
-                    onChange={(e) => setStrategy(e.target.value)}
-                    className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm outline-none transition-all text-muted-foreground focus:text-foreground focus:border-primary/60 cursor-pointer"
-                  >
-                    <option value="" className="bg-[#12141C]">
-                      Select target bot type...
-                    </option>
-                    <option value="grid" className="bg-[#12141C]">
-                      High-Frequency Grid Bot
-                    </option>
-                    <option value="dca" className="bg-[#12141C]">
-                      DCA (Dollar Cost Averaging) System
-                    </option>
-                    <option value="arbitrage" className="bg-[#12141C]">
-                      Triangular Arbitrage Script
-                    </option>
-                    <option value="custom" className="bg-[#12141C]">
-                      Other Custom Algorithmic Request
-                    </option>
-                  </select>
                 </div>
 
                 {/* Message */}
