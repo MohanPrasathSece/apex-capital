@@ -24,6 +24,7 @@ import {
   CheckCircle,
   HelpCircle,
   RotateCcw,
+  Shield,
 } from "lucide-react";
 
 export default function TradingTerminal() {

@@ -40,7 +40,7 @@ export function SmartInvesting() {
             A portfolio that <span className="text-gradient italic">thinks ahead</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            AI-guided allocations, risk-aware rebalancing, and human-quality research — all working
+            AI-guided allocations, risk-aware rebalancing, and human-quality research - all working
             in concert.
           </p>
         </motion.div>
@@ -137,7 +137,7 @@ export function SmartInvesting() {
               {[
                 {
                   tag: "Opportunity",
-                  text: "ETH momentum strengthening — consider 4% reallocation.",
+                  text: "ETH momentum strengthening - consider 4% reallocation.",
                   color: "var(--teal)",
                 },
                 {
@@ -147,7 +147,7 @@ export function SmartInvesting() {
                 },
                 {
                   tag: "Earn",
-                  text: "SOL staking now yields 7.1% APR — enable in one tap.",
+                  text: "SOL staking now yields 7.1% APR - enable in one tap.",
                   color: "oklch(0.62 0.18 260)",
                 },
               ].map((s, i) => (
