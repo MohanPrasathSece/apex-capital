@@ -2,28 +2,28 @@ import { motion } from "framer-motion";
 
 const FEATURES = [
   {
-    title: "Portfolio Management",
-    desc: "Allocations that adapt to market regime, with one-tap rebalance.",
+    title: "Gestion de Portefeuille",
+    desc: "Allocations qui s'adaptent au régime du marché, avec rééquilibrage en un clic.",
   },
   {
-    title: "AI Analysis",
-    desc: "Daily research distilled from on-chain, news, and order-flow signals.",
+    title: "Analyse IA",
+    desc: "Recherche quotidienne distillée à partir des signaux on-chain, de l'actualité et du flux d'ordres.",
   },
   {
-    title: "Market Alerts",
-    desc: "Personalised triggers that only ping when it actually matters.",
+    title: "Alertes de Marché",
+    desc: "Déclencheurs personnalisés qui ne s'activent que lorsque cela compte vraiment.",
   },
-  { title: "Cold Wallet Security", desc: "Multi-sig custody with HSM-backed key management." },
-  { title: "Staking & Yield", desc: "Curated yield strategies with transparent risk grades." },
-  { title: "Research Desk", desc: "Long-form theses and quantitative scorecards on 180+ assets." },
-  { title: "Automation", desc: "DCA, take-profit ladders, and conditional orders, codified." },
+  { title: "Sécurité de Portefeuille Froid", desc: "Garde multi-signatures avec gestion des clés basée sur HSM." },
+  { title: "Staking & Rendement", desc: "Stratégies de rendement sélectionnées avec des niveaux de risque transparents." },
+  { title: "Bureau de Recherche", desc: "Analyses approfondies et fiches d'évaluation quantitatives sur plus de 180 actifs." },
+  { title: "Automatisation", desc: "DCA, plans de prise de bénéfices (take-profit) et ordres conditionnels codifiés." },
   {
-    title: "Institutional Education",
-    desc: "From first satoshi to derivatives strategy, structured.",
+    title: "Éducation Institutionnelle",
+    desc: "Du premier satoshi aux stratégies de produits dérivés, de façon structurée.",
   },
   {
-    title: "Bank-grade Compliance",
-    desc: "SOC 2 Type II, ISO 27001, and segregated client accounts.",
+    title: "Conformité de Niveau Bancaire",
+    desc: "SOC 2 Type II, ISO 27001 et comptes clients séparés.",
   },
 ];
 
@@ -41,13 +41,13 @@ export function WhyChoose() {
           className="mx-auto max-w-2xl text-center"
         >
           <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-            Why Lumen
+            Pourquoi Lumen
           </div>
           <h2 className="mt-4 text-4xl md:text-6xl">
-            Built for <span className="text-gradient italic">conviction</span>
+            Conçu pour la <span className="text-gradient italic">conviction</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Every detail engineered for clarity, security, and long-term outperformance.
+            Chaque détail est pensé pour la clarté, la sécurité et la surperformance à long terme.
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ export function WhyChoose() {
                 className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
                   background:
-                    "radial-gradient(400px circle at 50% 0%, oklch(0.74 0.13 180 / 0.12), transparent 60%)",
+                     "radial-gradient(400px circle at 50% 0%, oklch(0.74 0.13 180 / 0.12), transparent 60%)",
                 }}
               />
               <div className="mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-primary/15 text-primary">
@@ -75,7 +75,7 @@ export function WhyChoose() {
               <h3 className="font-display text-xl">{f.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
               <div className="mt-6 flex items-center gap-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Learn more →
+                En savoir plus →
               </div>
             </motion.div>
           ))}

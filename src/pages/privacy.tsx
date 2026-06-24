@@ -12,87 +12,87 @@ export default function PrivacyPolicy() {
   const sections = [
     {
       title: "1. Introduction",
-      text: 'Lumen Capital ("we," "us," or "our") respects your privacy and is committed to protecting your personal data. This Privacy Policy describes how we collect, use, store, and share your personal information when you visit or interact with our platform.',
+      text: 'Lumen Capital ("nous", "notre" ou "nos") respecte votre vie privée et s\'engage à protéger vos données personnelles. Cette politique de confidentialité décrit comment nous collectons, utilisons, stockons et partageons vos informations personnelles lorsque vous visitez ou interagissez avec notre plateforme.',
     },
     {
-      title: "2. Definitions",
-      text: 'In this policy, "Personal Information" refers to any data relating to an identified or identifiable individual. "Service" refers to the Lumen educational cryptocurrency platforms and web applications. "CRM" refers to our third-party lead and affiliate management system.',
+      title: "2. Définitions",
+      text: 'Dans cette politique, "Informations Personnelles" désigne toute donnée relative à une personne physique identifiée ou identifiable. "Service" désigne les plateformes éducatives de crypto-monnaie et les applications web de Lumen. "CRM" désigne notre système tiers de gestion des prospects et des affiliés.',
     },
     {
-      title: "3. Information We Collect",
-      text: "We collect information to provide a better experience on our website. This includes data you provide directly to us (e.g. through signup and contact forms) and automatically collected technical parameters during your browser session.",
+      title: "3. Informations que nous collectons",
+      text: "Nous collectons des informations pour offrir une meilleure expérience sur notre site web. Cela inclut les données que vous nous fournissez directement (par exemple, via les formulaires d'inscription et de contact) et les paramètres techniques collectés automatiquement lors de votre session de navigation.",
     },
     {
-      title: "4. Information You Voluntarily Provide",
-      text: "We collect personal identifiers voluntarily entered by you in our home and logged-in contact and signup forms, which include your full name, email address, phone number, and any additional message text you choose to write.",
+      title: "4. Informations que vous fournissez volontairement",
+      text: "Nous collectons les identifiants personnels que vous saisissez volontairement dans nos formulaires de contact et d'inscription sur la page d'accueil ou en session connectée, ce qui inclut votre nom complet, votre adresse e-mail, votre numéro de téléphone et tout message supplémentaire que vous choisissez d'écrire.",
     },
     {
-      title: "5. Automatically Collected Information",
-      text: "When you browse the platform, we automatically collect basic log metadata, including IP addresses, browser types, language preferences, referring URLs, access dates and times, and page click statistics.",
+      title: "5. Informations collectées automatiquement",
+      text: "Lorsque vous naviguez sur la plateforme, nous collectons automatiquement des métadonnées de journal de base, notamment les adresses IP, les types de navigateurs, les préférences linguistiques, les URL de référence, les dates et heures d'accès et les statistiques de clic sur les pages.",
     },
     {
-      title: "6. Purpose of Data Collection",
-      text: "Your data is collected to verify user authenticity, record active user sessions, provide secure login credentials, customize educational interfaces, reply to strategic inquiries, and manage affiliate tracking logs.",
+      title: "6. Finalité de la collecte de données",
+      text: "Vos données sont collectées pour vérifier l'authenticité des utilisateurs, enregistrer les sessions utilisateur actives, fournir des identifiants de connexion sécurisés, personnaliser les interfaces éducatives, répondre aux demandes stratégiques et gérer les journaux de suivi des affiliés.",
     },
     {
-      title: "7. Legal Basis for Processing",
-      text: "We process your personal information under the following legal bases: (a) Your explicit consent; (b) The performance of our contractual obligation to grant access to the educational platform; and (c) Our legitimate business interest in managing relationships and securing the site.",
+      title: "7. Base légale du traitement",
+      text: "Nous traitons vos informations personnelles sur les bases légales suivantes : (a) Votre consentement explicite ; (b) L'exécution de notre obligation contractuelle de donner accès à la plateforme éducative ; et (c) Notre intérêt commercial légitime à gérer les relations et à sécuriser le site.",
     },
     {
-      title: "8. How Personal Information Is Used",
-      text: "We use your data to: establish your educational account, verify user sessions via secure database files, route client inquiries to the appropriate desk, track affiliate leads, and comply with standard anti-fraud guidelines.",
+      title: "8. Utilisation des informations personnelles",
+      text: "Nous utilisons vos données pour : créer votre compte éducatif, vérifier les sessions utilisateur via des fichiers de base de données sécurisés, acheminer les demandes des clients vers le bureau approprié, suivre les prospects affiliés et respecter les directives standard de lutte contre la fraude.",
     },
     {
-      title: "9. CRM & Third-Party Service Providers",
-      text: "Lumen secure contact and sign-up forms automatically submit data to our CRM Core service (inwo.crmcore.me) to process and follow up on investor leads. This integration is handled via secure proxy backend endpoints to protect your credentials.",
+      title: "9. CRM & Prestataires de services tiers",
+      text: "Les formulaires de contact et d'inscription sécurisés de Lumen soumettent automatiquement des données à notre service CRM Core (inwo.crmcore.me) pour traiter et suivre les prospects investisseurs. Cette intégration est gérée via des points de terminaison proxy backend sécurisés pour protéger vos identifiants.",
     },
     {
       title: "10. Cookies",
-      text: "We use essential cookies to maintain your login session. You can configure your browser to reject cookies, but doing so may limit your ability to access gated educational panels or retain custom settings.",
+      text: "Nous utilisons des cookies essentiels pour maintenir votre session de connexion. Vous pouvez configurer votre navigateur pour refuser les cookies, mais cela peut limiter votre capacité à accéder aux sections éducatives privées ou à conserver vos paramètres personnalisés.",
     },
     {
-      title: "11. Tracking Technologies",
-      text: "We do not deploy invasive third-party analytics pixels. Basic session states are stored locally on your device (e.g. localStorage) and server-side using Vercel private blobs to track session tokens securely.",
+      title: "11. Technologies de suivi",
+      text: "Nous ne déployons pas de pixels d'analyse tiers invasifs. Les états de session de base sont stockés localement sur votre appareil (par exemple, localStorage) et côté serveur à l'aide de blobs privés Vercel pour suivre les jetons de session en toute sécurité.",
     },
     {
-      title: "12. Data Security",
-      text: "We use strict technical and organizational measures to secure your data, including HTTPS encryption, serverless backend proxies that hide affiliate secrets, and private access constraints on our blob storage buckets.",
+      title: "12. Sécurité des données",
+      text: "Nous utilisons des mesures techniques et organisationnelles strictes pour sécuriser vos données, notamment le cryptage HTTPS, des proxys backend serverless qui masquent les secrets des affiliés et des contraintes d'accès privé sur nos conteneurs de stockage de blobs.",
     },
     {
-      title: "13. Data Retention",
-      text: "We retain your personal data and sessions only as long as is necessary to provide platform access, maintain CRM relationship files, or comply with legal audit obligations. Expired session files are periodically purged.",
+      title: "13. Conservation des données",
+      text: "Nous ne conservons vos données personnelles et vos sessions que le temps nécessaire pour fournir l'accès à la plateforme, maintenir les fichiers de relation CRM ou nous conformer aux obligations d'audit légal. Les fichiers de session expirés sont périodiquement purgés.",
     },
     {
-      title: "14. International Data Transfers",
-      text: "Your information may be stored and processed in countries outside of your residence, including on cloud servers maintained by Vercel in the European Union or the United States. We ensure standard data protection clauses govern these transfers.",
+      title: "14. Transferts internationaux de données",
+      text: "Vos informations peuvent être stockées et traitées dans des pays autres que celui de votre résidence, y compris sur des serveurs cloud maintenus par Vercel dans l'Union européenne ou aux États-Unis. Nous veillons à ce que des clauses standard de protection des données régissent ces transferts.",
     },
     {
-      title: "15. User Rights",
-      text: "Depending on your jurisdiction (e.g., GDPR, CCPA), you have rights to access, correct, delete, restrict, or obtain a copy of your personal data. To exercise these rights, submit a request via our contact portal.",
+      title: "15. Droits de l'utilisateur",
+      text: "Selon votre juridiction (par exemple, RGPD, CCPA), vous disposez de droits d'accès, de rectification, de suppression, de restriction ou d'obtention d'une copie de vos données personnelles. Pour exercer ces droits, soumettez une demande via notre portail de contact.",
     },
     {
-      title: "16. Marketing Communications",
-      text: "If you sign up or subscribe, we may send you occasional educational newsletters or updates. You can unsubscribe at any time by clicking the link at the bottom of the emails.",
+      title: "16. Communications marketing",
+      text: "Si vous vous inscrivez ou vous abonnez, nous pouvons vous envoyer occasionnellement des newsletters ou des mises à jour éducatives. Vous pouvez vous désabonner à tout moment en cliquant sur le lien situé au bas des e-mails.",
     },
     {
-      title: "17. Children's Privacy",
-      text: "Our services are designed strictly for institutional and adult users. We do not knowingly collect personal data from individuals under the age of 18.",
+      title: "17. Protection de la vie privée des enfants",
+      text: "Nos services sont conçus exclusivement pour des utilisateurs institutionnels et adultes. Nous ne collectons pas sciemment de données personnelles auprès de personnes de moins de 18 ans.",
     },
     {
-      title: "18. Third-Party Websites",
-      text: "Our platform may contain links to external cryptocurrency tools, networks, or references. We do not control and are not responsible for the privacy practices of external web addresses.",
+      title: "18. Sites web tiers",
+      text: "Notre plateforme peut contenir des liens vers des outils, réseaux ou références externes de crypto-monnaie. Nous ne contrôlons pas et ne sommes pas responsables des pratiques de confidentialité des adresses web externes.",
     },
     {
-      title: "19. Policy Updates",
-      text: "We update this privacy policy from time to time to reflect platform changes. Updates are posted directly to this URL, and your continued usage indicates your acceptance of the updated conditions.",
+      title: "19. Mises à jour de la politique",
+      text: "Nous mettons à jour cette politique de confidentialité de temps à autre pour refléter les changements de la plateforme. Les mises à jour sont publiées directement sur cette URL, et votre utilisation continue indique votre acceptation des conditions mises à jour.",
     },
     {
-      title: "20. Contact Information",
-      text: "If you have any questions, concerns, or requests regarding this Privacy Policy, please contact our privacy officer at hello@lumen.capital.",
+      title: "20. Coordonnées de contact",
+      text: "Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité, veuillez contacter notre responsable de la protection de la vie privée à hello@lumen.capital.",
     },
     {
-      title: "21. Last Updated Date",
-      text: "This privacy policy was last updated on June 24, 2026.",
+      title: "21. Date de dernière mise à jour",
+      text: "Cette politique de confidentialité a été mise à jour pour la dernière fois le 24 juin 2026.",
     },
   ];
 
@@ -111,20 +111,19 @@ export default function PrivacyPolicy() {
             onClick={() => navigate("/")}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-8"
           >
-            <ArrowLeft className="h-4 w-4" /> Back to home
+            <ArrowLeft className="h-4 w-4" /> Retour à l'accueil
           </button>
 
           {/* Heading */}
           <div className="mb-12">
             <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-              Legal Portal
+              Portail Légal
             </div>
             <h1 className="mt-3 font-display text-4xl md:text-6xl tracking-tight">
-              Privacy Policy
+              Politique de Confidentialité
             </h1>
             <p className="mt-2 text-muted-foreground text-sm">
-              Please read this privacy policy carefully to understand how we safeguard your personal
-              assets and data.
+              Veuillez lire attentivement cette politique de confidentialité pour comprendre comment nous protégeons vos actifs personnels et vos données.
             </p>
           </div>
 

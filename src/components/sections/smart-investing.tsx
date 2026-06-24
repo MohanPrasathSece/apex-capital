@@ -34,14 +34,13 @@ export function SmartInvesting() {
           className="mx-auto max-w-2xl text-center"
         >
           <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-            Smart Investing
+            Investissement Intelligent
           </div>
           <h2 className="mt-4 text-4xl md:text-6xl">
-            A portfolio that <span className="text-gradient italic">thinks ahead</span>
+            Un portefeuille qui <span className="text-gradient italic">anticipe l'avenir</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            AI-guided allocations, risk-aware rebalancing, and human-quality research - all working
-            in concert.
+            Allocations guidées par l'IA, rééquilibrage sensible aux risques et recherche de qualité humaine - le tout fonctionnant de concert.
           </p>
         </motion.div>
 
@@ -56,9 +55,9 @@ export function SmartInvesting() {
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              Allocation Wheel
+              Roue d'allocation
             </div>
-            <h3 className="mt-1 font-display text-2xl">Diversified by design</h3>
+            <h3 className="mt-1 font-display text-2xl">Diversifié par conception</h3>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-8">
               <div className="relative h-48 w-48 shrink-0">
@@ -110,7 +109,7 @@ export function SmartInvesting() {
                   >
                     <div className="flex items-center gap-2">
                       <span className="h-2.5 w-2.5 rounded-sm" style={{ background: a.color }} />
-                      {a.label}
+                      {a.label === "Stables" ? "Stables" : a.label}
                     </div>
                     <span className="tabular-nums text-muted-foreground">{a.value}%</span>
                   </motion.div>
@@ -129,25 +128,25 @@ export function SmartInvesting() {
             className="relative glass-strong rounded-3xl p-8 shadow-card"
           >
             <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              AI Co-pilot
+              Copilote IA
             </div>
-            <h3 className="mt-1 font-display text-2xl">Insights, every minute</h3>
+            <h3 className="mt-1 font-display text-2xl">Analyses, minute par minute</h3>
 
             <div className="mt-8 space-y-3">
               {[
                 {
-                  tag: "Opportunity",
-                  text: "ETH momentum strengthening - consider 4% reallocation.",
+                  tag: "Opportunité",
+                  text: "La dynamique de l'ETH se renforce - envisagez une réallocation de 4%.",
                   color: "var(--teal)",
                 },
                 {
-                  tag: "Risk",
-                  text: "Stables exposure below target. Auto-rebalance ready.",
+                  tag: "Risque",
+                  text: "Exposition aux stables inférieure à la cible. Rééquilibrage auto prêt.",
                   color: "oklch(0.72 0.16 60)",
                 },
                 {
-                  tag: "Earn",
-                  text: "SOL staking now yields 7.1% APR - enable in one tap.",
+                  tag: "Rendement",
+                  text: "Le staking SOL rapporte désormais 7,1% de TAEG - activez en un clic.",
                   color: "oklch(0.62 0.18 260)",
                 },
               ].map((s, i) => (
@@ -174,8 +173,8 @@ export function SmartInvesting() {
 
             <div className="mt-6 rounded-2xl bg-primary/10 p-4">
               <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <span>Risk meter</span>
-                <span>Conservative</span>
+                <span>Indicateur de risque</span>
+                <span>Conservateur</span>
               </div>
               <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/5">
                 <motion.div

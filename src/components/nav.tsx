@@ -36,13 +36,18 @@ export function Nav() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            {["Platform", "Markets", "Research", "Pricing"].map((l) => (
+            {[
+              { label: "Plateforme", id: "platform" },
+              { label: "Marchés", id: "markets" },
+              { label: "Recherche", id: "research" },
+              { label: "Tarifs", id: "pricing" },
+            ].map((link) => (
               <a
-                key={l}
-                href={`#${l.toLowerCase()}`}
+                key={link.id}
+                href={`#${link.id}`}
                 className="relative hover:text-foreground transition-colors group"
               >
-                {l}
+                {link.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all group-hover:w-full" />
               </a>
             ))}
@@ -54,19 +59,19 @@ export function Nav() {
               {user ? (
                 <>
                   <Link to="/app" className="text-sm text-muted-foreground hover:text-foreground">
-                    Learn Hub
+                    Centre d'apprentissage
                   </Link>
                   <Link
                     to="/trading"
                     className="text-sm text-muted-foreground hover:text-foreground ml-4"
                   >
-                    Trading Bots
+                    Robots de trading
                   </Link>
                   <button
                     onClick={logout}
                     className="rounded-full px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground cursor-pointer"
                   >
-                    Sign out
+                    Se déconnecter
                   </button>
                 </>
               ) : (
@@ -75,13 +80,13 @@ export function Nav() {
                     onClick={openLogin}
                     className="rounded-full px-4 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    Log in
+                    Se connecter
                   </button>
                   <button
                     onClick={openSignup}
                     className="group relative rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground shadow-glow hover:scale-105 transition-transform"
                   >
-                    Get started
+                    Commencer
                   </button>
                 </>
               )}
@@ -91,7 +96,7 @@ export function Nav() {
             <button
               onClick={toggleMobileMenu}
               className="flex md:hidden items-center justify-center p-2 rounded-xl bg-white/5 border border-white/5 text-muted-foreground hover:text-foreground cursor-pointer"
-              aria-label="Toggle Menu"
+              aria-label="Basculer le menu"
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -117,25 +122,30 @@ export function Nav() {
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-foreground hover:text-primary transition-colors py-2 border-b border-white/5"
                   >
-                    Learn Hub
+                    Centre d'apprentissage
                   </Link>
                   <Link
                     to="/trading"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-foreground hover:text-primary transition-colors py-2 border-b border-white/5"
                   >
-                    Trading Bots
+                    Robots de trading
                   </Link>
                 </>
               ) : (
-                ["Platform", "Markets", "Research", "Pricing"].map((l) => (
+                [
+                  { label: "Plateforme", id: "platform" },
+                  { label: "Marchés", id: "markets" },
+                  { label: "Recherche", id: "research" },
+                  { label: "Tarifs", id: "pricing" },
+                ].map((link) => (
                   <a
-                    key={l}
-                    href={`#${l.toLowerCase()}`}
+                    key={link.id}
+                    href={`#${link.id}`}
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-foreground hover:text-primary transition-colors py-2 border-b border-white/5"
                   >
-                    {l}
+                    {link.label}
                   </a>
                 ))
               )}
@@ -150,7 +160,7 @@ export function Nav() {
                   }}
                   className="w-full py-3 rounded-2xl bg-white/5 border border-white/5 text-center text-sm font-semibold text-foreground hover:bg-white/10 transition-colors cursor-pointer"
                 >
-                  Sign out
+                  Se déconnecter
                 </button>
               ) : (
                 <>
@@ -161,7 +171,7 @@ export function Nav() {
                     }}
                     className="w-full py-3 rounded-2xl bg-white/5 border border-white/5 text-center text-sm font-semibold text-foreground hover:bg-white/10 transition-colors"
                   >
-                    Log in
+                    Se connecter
                   </button>
                   <button
                     onClick={() => {
@@ -170,7 +180,7 @@ export function Nav() {
                     }}
                     className="w-full py-3 rounded-2xl bg-primary text-center text-sm font-semibold text-primary-foreground shadow-glow hover:opacity-90 transition-opacity"
                   >
-                    Get started
+                    Commencer
                   </button>
                 </>
               )}

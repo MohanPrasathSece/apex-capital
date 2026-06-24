@@ -11,96 +11,96 @@ export default function TermsConditions() {
 
   const sections = [
     {
-      title: "1. Acceptance of Terms",
-      text: 'By accessing, browsing, or using the Lumen Capital platform ("Website" or "Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree, you must immediately cease accessing the platform.',
+      title: "1. Acceptation des conditions",
+      text: 'En accédant à la plateforme Lumen Capital ("Site web" ou "Service"), en y naviguant ou en l\'utilisant, vous reconnaissez avoir lu, compris et accepté d\'être lié par ces Conditions Générales. Si vous n\'êtes pas d\'accord, vous devez immédiatement cesser d\'accéder à la plateforme.',
     },
     {
-      title: "2. Eligibility",
-      text: "By accessing this Website, you represent and warrant that you are at least 18 years of age, possess the legal capacity to enter into binding agreements, and are not barred from accessing digital asset platforms under your local laws.",
+      title: "2. Éligibilité",
+      text: "En accédant à ce Site web, vous déclarez et garantissez que vous êtes âgé d'au moins 18 ans, que vous possédez la capacité juridique de conclure des accords contraignants et que vous n'êtes pas interdit d'accéder à des plateformes d'actifs numériques en vertu de vos lois locales.",
     },
     {
-      title: "3. Website Purpose",
-      text: "The Service provides educational cryptocurrency portals, mock order book interfaces, risk analysis tools, blockchain simulators, and technical market insights. It is designed to act strictly as a learning resource.",
+      title: "3. Objectif du site web",
+      text: "Le Service fournit des portails éducatifs sur la crypto-monnaie, des interfaces de carnet d'ordres fictives, des outils d'analyse des risques, des simulateurs de blockchain et des perspectives de marché techniques. Il est conçu pour agir strictement comme une ressource d'apprentissage.",
     },
     {
-      title: "4. User Responsibilities",
-      text: "You are responsible for securing the devices used to access the Website and safeguarding your secure login session key. You agree to provide accurate, current, and complete details when signing up or sending strategic inquiries.",
+      title: "4. Responsabilités de l'utilisateur",
+      text: "Vous êtes responsable de la sécurisation des appareils utilisés pour accéder au Site web et de la protection de votre clé de session de connexion sécurisée. Vous acceptez de fournir des informations exactes, actuelles et complètes lors de votre inscription ou de l'envoi de demandes stratégiques.",
     },
     {
-      title: "5. Acceptable Use",
-      text: "You agree to use this Website only for lawful purposes. You must not attempt to disrupt the operational performance of our backend serverless functions, bypass authentication gates, or access database blobs of other users.",
+      title: "5. Utilisation acceptable",
+      text: "Vous acceptez d'utiliser ce Site web uniquement à des fins licites. Vous ne devez pas tenter de perturber les performances opérationnelles de nos fonctions serverless backend, de contourner les barrières d'authentification ou d'accéder aux blobs de base de données d'autres utilisateurs.",
     },
     {
-      title: "6. Prohibited Activities",
-      text: "Prohibited actions include: reverse-engineering platform assets, executing automated scraping scripts, uploading malicious code, spamming contact forms, utilizing session tokens that do not belong to you, and providing fraudulent details.",
+      title: "6. Activités interdites",
+      text: "Les actions interdites comprennent : l'ingénierie inverse des actifs de la plateforme, l'exécution de scripts de collecte automatique de données (scraping), le téléchargement de codes malveillants, le spamming des formulaires de contact, l'utilisation de jetons de session qui ne vous appartiennent pas et la fourniture de fausses informations.",
     },
     {
-      title: "7. Intellectual Property",
-      text: "All material on this Website, including text, custom design systems, icons, graphics, interactive charts, logos, and server scripts, are the exclusive intellectual property of Lumen Capital and are protected under international copyright laws.",
+      title: "7. Propriété intellectuelle",
+      text: "Tout le matériel de ce Site web, y compris les textes, les systèmes de conception personnalisés, les icônes, les graphiques, les graphiques interactifs, les logos et les scripts de serveur, sont la propriété intellectuelle exclusive de Lumen Capital et sont protégés par les lois internationales sur le droit d'auteur.",
     },
     {
-      title: "8. Accuracy of Information",
-      text: 'While we make effort to keep educational content up-to-date, we do not warrant that indicators, simulated candlestick charts, or mock order books represent actual or active market prices. Content is provided on an "as-is" basis.',
+      title: "8. Exactitude des informations",
+      text: 'Bien que nous nous efforcions de maintenir le contenu éducatif à jour, nous ne garantissons pas que les indicateurs, les graphiques en chandeliers simulés ou les carnets d\'ordres fictifs représentent les prix réels ou actifs du marché. Le contenu est fourni "en l\'état".',
     },
     {
-      title: "9. No Financial Advice",
-      text: "The calculations, simulator ratings, charts, and articles displayed inside the platform are for educational purposes only. They do not constitute financial advice, and should not be treated as a call to buy, hold, or sell digital assets.",
+      title: "9. Aucun conseil financier",
+      text: "Les calculs, évaluations de simulateurs, graphiques et articles affichés à l'intérieur de la plateforme sont uniquement à des fins éducatives. Ils ne constituent pas des conseils financiers et ne doivent pas être traités comme un appel à acheter, conserver ou vendre des actifs numériques.",
     },
     {
-      title: "10. No Investment Advice",
-      text: "Lumen Capital does not operate as an investment adviser, broker-dealer, or financial consultant. We do not construct personalized portfolios or manage funds. Always consult a licensed professional before making investment decisions.",
+      title: "10. Aucun conseil en investissement",
+      text: "Lumen Capital ne fonctionne pas comme un conseiller en investissement, un courtier ou un consultant financier. Nous ne construisons pas de portefeuilles personnalisés et ne gérons pas de fonds. Consultez toujours un professionnel agréé avant de prendre des décisions d'investissement.",
     },
     {
-      title: "11. Cryptocurrency Risk Disclosure",
-      text: "Cryptocurrency markets are subject to extreme volatility, regulatory shifts, network forks, exchange failures, and permanent asset loss. Staking, trading, and self-custody activities involve high structural risk.",
+      title: "11. Divulgation des risques liés aux crypto-monnaies",
+      text: "Les marchés de crypto-monnaies sont soumis à une volatilité extrême, à des changements réglementaires, à des bifurcations de réseau (forks), à des défaillances de plateformes d'échange et à la perte permanente d'actifs. Les activités de jalonnement (staking), de trading et d'auto-conservation impliquent un risque structurel élevé.",
     },
     {
-      title: "12. No Guarantee of Returns",
-      text: "We make no representation or guarantee that following the models or risk strategies mentioned in the educational hub will yield profits or protect you from asset drawdowns. Past simulated results are not indicative of future performance.",
+      title: "12. Aucune garantie de rendement",
+      text: "Nous ne faisons aucune déclaration ni ne garantissons que le fait de suivre les modèles ou les stratégies de risque mentionnés dans le pôle éducatif générera des bénéfices ou vous protégera des baisses d'actifs. Les résultats simulés passés ne sont pas indicatifs des performances futures.",
     },
     {
-      title: "13. Limitation of Liability",
-      text: "To the maximum extent permitted by law, Lumen Capital, its affiliates, officers, and developers will not be liable for any direct, indirect, incidental, special, or consequential damages resulting from your use or inability to use the platform.",
+      title: "13. Limitation de responsabilité",
+      text: "Dans la mesure maximale permise par la loi, Lumen Capital, ses affiliés, dirigeants et développeurs ne seront pas responsables des dommages directs, indirects, accessoires, spéciaux ou consécutifs résultant de votre utilisation ou de votre incapacité à utiliser la plateforme.",
     },
     {
-      title: "14. Indemnification",
-      text: "You agree to indemnify, defend, and hold harmless Lumen Capital, its directors, employees, and developers from any claims, losses, or legal liabilities arising from your violation of these Terms or misuse of the Website.",
+      title: "14. Indemnisation",
+      text: "Vous acceptez d'indemniser, de défendre et de dégager de toute responsabilité Lumen Capital, ses administrateurs, employés et développeurs contre toute réclamation, perte ou responsabilité juridique découlant de votre violation de ces Conditions ou d'une mauvaise utilisation du Site web.",
     },
     {
-      title: "15. Third-Party Links",
-      text: "Our Website may link to external tools or platforms. We do not endorse or assume liability for the contents, products, or services available on these third-party web addresses.",
+      title: "15. Liens tiers",
+      text: "Notre Site web peut renvoyer vers des outils ou des plateformes externes. Nous n'approuvons pas et n'assumons aucune responsabilité pour les contenus, produits ou services disponibles sur ces adresses web tierces.",
     },
     {
-      title: "16. Privacy Policy Reference",
-      text: "Your access to and use of this Website is also governed by our Privacy Policy, which details how we collect, store, and process your personal identifiers and session files securely.",
+      title: "16. Référence à la politique de confidentialité",
+      text: "Votre accès et votre utilisation de ce Site web sont également régis par notre Politique de Confidentialité, qui détaille comment nous collectons, stockons et traitons vos identifiants personnels et fichiers de session en toute sécurité.",
     },
     {
-      title: "17. Suspension of Access",
-      text: "We reserve the right, without notice and at our sole discretion, to suspend or terminate your access to the educational client portal for violating these Terms or engaging in activities that threaten database integrity.",
+      title: "17. Suspension d'accès",
+      text: "Nous nous réservons le droit, sans préavis et à notre seule discrétion, de suspendre ou de résilier votre accès au portail client éducatif en cas de violation de ces Conditions ou d'activités menaçant l'intégrité de la base de données.",
     },
     {
-      title: "18. Governing Law",
-      text: "These Terms & Conditions are governed by and construed in accordance with the laws of Cyprus, without regard to conflicts of law principles.",
+      title: "18. Loi applicable",
+      text: "Ces Conditions Générales sont régies et interprétées conformément aux lois de Chypre, sans égard aux principes de conflit de lois.",
     },
     {
-      title: "19. Dispute Resolution",
-      text: "Any dispute, controversy, or claim arising out of these Terms will be settled through good-faith negotiation, failing which the dispute will be submitted to binding arbitration in Cyprus.",
+      title: "19. Résolution des litiges",
+      text: "Tout différend, controverse ou réclamation découlant de ces Conditions sera réglé par des négociations de bonne foi, à défaut de quoi le différend sera soumis à un arbitrage exécutoire à Chypre.",
     },
     {
-      title: "20. Severability",
-      text: "If any provision of these Terms is found by a court of competent jurisdiction to be invalid or unenforceable, that provision will be limited, and the remaining provisions will continue in full force and effect.",
+      title: "20. Divisibilité",
+      text: "Si une disposition de ces Conditions est jugée invalide ou inapplicable par un tribunal compétent, cette disposition sera limitée et les dispositions restantes continueront d'être pleinement applicables.",
     },
     {
-      title: "21. Changes to Terms",
-      text: "We reserve the right to modify these Terms & Conditions at any time. Changes become effective immediately upon posting to this URL. Your continued usage of the site represents acceptance of the revised conditions.",
+      title: "21. Modifications des conditions",
+      text: "Nous nous réservons le droit de modifier ces Conditions Générales à tout moment. Les modifications entrent en vigueur immédiatement après leur publication sur cette URL. Votre utilisation continue du site représente votre acceptation des conditions révisées.",
     },
     {
-      title: "22. Contact Information",
-      text: "For enquiries regarding these Terms, please contact our legal desk at hello@lumen.capital.",
+      title: "22. Coordonnées de contact",
+      text: "Pour toute demande concernant ces Conditions, veuillez contacter notre service juridique à hello@lumen.capital.",
     },
     {
-      title: "23. Last Updated Date",
-      text: "These Terms & Conditions were last updated on June 24, 2026.",
+      title: "23. Date de dernière mise à jour",
+      text: "Ces Conditions Générales ont été mises à jour pour la dernière fois le 24 juin 2026.",
     },
   ];
 
@@ -119,20 +119,19 @@ export default function TermsConditions() {
             onClick={() => navigate("/")}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-8"
           >
-            <ArrowLeft className="h-4 w-4" /> Back to home
+            <ArrowLeft className="h-4 w-4" /> Retour à l'accueil
           </button>
 
           {/* Heading */}
           <div className="mb-12">
             <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-              Legal Portal
+              Portail Légal
             </div>
             <h1 className="mt-3 font-display text-4xl md:text-6xl tracking-tight">
-              Terms & Conditions
+              Conditions Générales
             </h1>
             <p className="mt-2 text-muted-foreground text-sm">
-              Please review these Terms & Conditions thoroughly before using the services of Lumen
-              Capital.
+              Veuillez lire attentivement ces Conditions Générales avant d'utiliser les services de Lumen Capital.
             </p>
           </div>
 

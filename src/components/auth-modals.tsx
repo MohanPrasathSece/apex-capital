@@ -15,16 +15,16 @@ export function AuthModals() {
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (modal === "signup" && !name.trim()) errs.name = "Full name is required";
+    if (modal === "signup" && !name.trim()) errs.name = "Le nom complet est requis.";
 
     if (!email.trim()) {
-      errs.email = "Email address is required";
+      errs.email = "L'adresse e-mail est requise.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errs.email = "Invalid email address format";
+      errs.email = "Format d'adresse e-mail invalide.";
     }
 
     if (modal === "signup" && !phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis.";
     }
 
     setErrors(errs);
@@ -40,26 +40,26 @@ export function AuthModals() {
       if (modal === "login") {
         const res = await login(email);
         if (res.success) {
-          toast.success("Successfully logged in.");
+          toast.success("Connexion réussie.");
           setEmail("");
           navigate("/trading");
         } else {
-          toast.error(res.error || "Login failed.");
+          toast.error(res.error || "Échec de la connexion.");
         }
       } else {
         const res = await signup(name, email, phone);
         if (res.success) {
-          toast.success("Account created successfully.");
+          toast.success("Compte créé avec succès.");
           setEmail("");
           setName("");
           setPhone("");
           navigate("/trading");
         } else {
-          toast.error(res.error || "Signup failed.");
+          toast.error(res.error || "Échec de l'inscription.");
         }
       }
     } catch (err) {
-      toast.error("An unexpected error occurred. Please try again.");
+      toast.error("Une erreur inattendue est survenue. Veuillez réessayer.");
     } finally {
       setLoading(false);
     }
@@ -95,12 +95,12 @@ export function AuthModals() {
 
             <div className="mb-6">
               <h2 className="font-display text-3xl">
-                {modal === "login" ? "Welcome back" : "Create your account"}
+                {modal === "login" ? "Bon retour parmi nous" : "Créez votre compte"}
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 {modal === "login"
-                  ? "Continue building your portfolio."
-                  : "Start investing in minutes."}
+                  ? "Continuez à développer votre portefeuille."
+                  : "Commencez à investir en quelques minutes."}
               </p>
             </div>
 
@@ -108,7 +108,7 @@ export function AuthModals() {
               {modal === "signup" && (
                 <div className="space-y-1">
                   <Field
-                    label="Full name"
+                    label="Nom complet"
                     value={name}
                     onChange={(v) => {
                       setName(v);
@@ -122,7 +122,7 @@ export function AuthModals() {
               )}
               <div className="space-y-1">
                 <Field
-                  label="Email"
+                  label="E-mail"
                   type="email"
                   value={email}
                   onChange={(v) => {
@@ -137,7 +137,7 @@ export function AuthModals() {
               {modal === "signup" && (
                 <div className="space-y-1">
                   <Field
-                    label="Phone number"
+                    label="Numéro de téléphone"
                     type="tel"
                     value={phone}
                     onChange={(v) => {
@@ -159,10 +159,10 @@ export function AuthModals() {
                 {loading ? (
                   <motion.span className="inline-flex items-center gap-2">
                     <span className="h-3 w-3 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
-                    {modal === "login" ? "Signing in..." : "Creating account..."}
+                    {modal === "login" ? "Connexion..." : "Création du compte..."}
                   </motion.span>
                 ) : (
-                  <>{modal === "login" ? "Continue" : "Create account"}</>
+                  <>{modal === "login" ? "Continuer" : "Créer le compte"}</>
                 )}
               </motion.button>
             </form>
@@ -170,22 +170,22 @@ export function AuthModals() {
             <div className="mt-6 text-center text-xs text-muted-foreground">
               {modal === "login" ? (
                 <>
-                  New to Lumen?{" "}
+                  Nouveau sur Lumen ?{" "}
                   <button
                     onClick={openSignup}
                     className="text-primary hover:underline cursor-pointer"
                   >
-                    Create account
+                    Créer un compte
                   </button>
                 </>
               ) : (
                 <>
-                  Already have an account?{" "}
+                  Vous avez déjà un compte ?{" "}
                   <button
                     onClick={openLogin}
                     className="text-primary hover:underline cursor-pointer"
                   >
-                    Log in
+                    Se connecter
                   </button>
                 </>
               )}

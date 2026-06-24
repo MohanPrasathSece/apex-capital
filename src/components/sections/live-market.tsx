@@ -43,7 +43,7 @@ function FearGreed() {
       </svg>
       <div className="mt-2 text-center">
         <div className="font-display text-3xl">{v}</div>
-        <div className="text-xs text-muted-foreground">Greed</div>
+        <div className="text-xs text-muted-foreground">Avidité</div>
       </div>
     </div>
   );
@@ -63,13 +63,13 @@ export function LiveMarket() {
           className="mx-auto max-w-2xl text-center"
         >
           <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-            Live Markets
+            Marchés en Direct
           </div>
           <h2 className="mt-4 text-4xl md:text-6xl">
-            The market, <span className="text-gradient italic">in motion</span>
+            Le marché, <span className="text-gradient italic">en mouvement</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Real-time analytics rendered with cinematic clarity. No noise, just signal.
+            Analyses en temps réel présentées avec une clarté cinématique. Pas de bruit, juste du signal.
           </p>
         </motion.div>
 
@@ -86,7 +86,7 @@ export function LiveMarket() {
                 <div className="text-xs text-muted-foreground">BTC / USD</div>
                 <div className="flex items-baseline gap-2">
                   <div className="font-display text-3xl">$67,432.12</div>
-                  <div className="text-sm text-primary">+2.4%</div>
+                  <div className="text-sm text-primary">+2,4%</div>
                 </div>
               </div>
               <div className="flex gap-1 rounded-full border border-white/5 bg-white/5 p-1 text-xs">
@@ -95,7 +95,7 @@ export function LiveMarket() {
                     key={t}
                     className={`rounded-full px-3 py-1 ${i === 2 ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
                   >
-                    {t}
+                    {t === "1H" ? "1H" : t === "4H" ? "4H" : t === "1D" ? "1J" : t === "1W" ? "1S" : t === "1M" ? "1M" : t}
                   </button>
                 ))}
               </div>
@@ -141,8 +141,8 @@ export function LiveMarket() {
 
           {/* Fear & greed */}
           <div className="md:col-span-4 glass-strong rounded-3xl p-6 shadow-card">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              Fear & Greed
+            <div className="text-xs uppercase tracking-widest text-muted-foreground animate-pulse">
+              Peur & Avidité
             </div>
             <div className="mt-4">
               <FearGreed />
@@ -153,9 +153,9 @@ export function LiveMarket() {
           <div className="md:col-span-7 glass-strong rounded-3xl p-6 shadow-card">
             <div className="flex items-center justify-between">
               <div className="text-xs uppercase tracking-widest text-muted-foreground">
-                Market Heatmap
+                Carte Thermique du Marché
               </div>
-              <div className="text-xs text-muted-foreground">Top 36 by cap</div>
+              <div className="text-xs text-muted-foreground">Top 36 par capitalisation</div>
             </div>
             <div className="mt-4 grid grid-cols-9 gap-1">
               {HEAT.map((c, i) => {
@@ -184,7 +184,7 @@ export function LiveMarket() {
           {/* Gainers/losers */}
           <div className="md:col-span-5 glass-strong rounded-3xl p-6 shadow-card">
             <div className="text-xs uppercase tracking-widest text-muted-foreground">
-              Top movers
+              Plus fortes variations
             </div>
             <div className="mt-4 space-y-2">
               {[

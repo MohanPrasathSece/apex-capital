@@ -4,20 +4,20 @@ import { toast } from "sonner";
 
 const FAQ = [
   {
-    q: "Is Lumen regulated?",
-    a: "Lumen Capital operates under licensed entities in EU, UK, and US, with SOC 2 Type II and ISO 27001 certifications.",
+    q: "Lumen est-il réglementé ?",
+    a: "Lumen Capital opère sous des entités agréées dans l'UE, au Royaume-Uni et aux États-Unis, avec les certifications SOC 2 Type II et ISO 27001.",
   },
   {
-    q: "How are assets custodied?",
-    a: "Assets are held in multi-sig cold storage with HSM-backed key management and segregated client accounts.",
+    q: "Comment les actifs sont-ils conservés ?",
+    a: "Les actifs sont conservés dans un stockage à froid multi-signatures avec gestion des clés basée sur HSM et comptes clients séparés.",
   },
   {
-    q: "What are the fees?",
-    a: "A flat 0.25% management fee. No trading commissions on portfolio rebalances.",
+    q: "Quels sont les frais ?",
+    a: "Des frais de gestion fixes de 0,25%. Pas de commissions de négociation sur les rééquilibrages de portefeuille.",
   },
   {
-    q: "Can I withdraw at any time?",
-    a: "Yes. Withdrawals are processed within one business day, with self-custody options available.",
+    q: "Puis-je effectuer des retraits à tout moment ?",
+    a: "Oui. Les retraits sont traités en un jour ouvrable, avec des options d'auto-conservation disponibles.",
   },
 ];
 
@@ -35,16 +35,16 @@ export function ContactSection() {
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!fullName.trim()) errs.name = "Full name is required";
+    if (!fullName.trim()) errs.name = "Le nom complet est requis";
 
     if (!email.trim()) {
-      errs.email = "Email address is required";
+      errs.email = "L'adresse e-mail est requise";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errs.email = "Invalid email format";
+      errs.email = "Format d'e-mail invalide";
     }
 
     if (!phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis";
     }
 
     setErrors(errs);
@@ -72,12 +72,12 @@ export function ContactSection() {
 
       if (res.ok && data.success) {
         setSubmitted(true);
-        toast.success("Enquiry submitted successfully.");
+        toast.success("Demande envoyée avec succès.");
       } else {
-        toast.error("Failed to submit enquiry. Please try again.");
+        toast.error("Échec de l'envoi de la demande. Veuillez réessayer.");
       }
     } catch (err) {
-      toast.error("Network error. Please check your connection.");
+      toast.error("Erreur réseau. Veuillez vérifier votre connexion.");
     } finally {
       setLoading(false);
     }
@@ -111,18 +111,17 @@ export function ContactSection() {
               Contact
             </div>
             <h2 className="mt-4 text-4xl md:text-6xl">
-              Let's talk <span className="text-gradient italic">strategy</span>
+              Discutons <span className="text-gradient italic">stratégie</span>
             </h2>
             <p className="mt-4 max-w-md text-muted-foreground">
-              Whether you're allocating $10k or $10M, our team is here to help you build a portfolio
-              with purpose.
+              Que vous allouiez 10 000 $ ou 10 M$, notre équipe est là pour vous aider à construire un portefeuille avec un objectif précis.
             </p>
 
             <div className="mt-10 space-y-3">
               {[
-                ["hello@lumen.capital", "Email"],
-                ["+1 (415) 555-0182", "Phone"],
-                ["San Francisco · London · Singapore", "Offices"],
+                ["hello@lumen.capital", "E-mail"],
+                ["+1 (415) 555-0182", "Téléphone"],
+                ["San Francisco · Londres · Singapour", "Bureaux"],
               ].map(([v, l]) => (
                 <div
                   key={l}
@@ -137,7 +136,7 @@ export function ContactSection() {
             </div>
 
             <div className="mt-12">
-              <h3 className="font-display text-2xl">Frequently asked</h3>
+              <h3 className="font-display text-2xl">Questions fréquentes</h3>
               <div className="mt-4 space-y-2">
                 {FAQ.map((f, i) => (
                   <button
@@ -210,19 +209,19 @@ export function ContactSection() {
                         />
                       </svg>
                     </motion.div>
-                    <h3 className="font-display text-2xl">Enquiry Received</h3>
+                    <h3 className="font-display text-2xl">Demande reçue</h3>
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                      Thank you! Your enquiry has been received successfully.
+                      Merci ! Votre demande a été reçue avec succès.
                     </p>
                   </motion.div>
                 ) : (
                   <motion.form key="form" onSubmit={submit} className="space-y-4">
-                    <h3 className="font-display text-2xl">Send a message</h3>
+                    <h3 className="font-display text-2xl">Envoyer un message</h3>
 
                     {/* Full Name */}
                     <div className="space-y-1">
                       <FloatingInput
-                        label="Full name"
+                        label="Nom complet"
                         value={fullName}
                         onChange={(val) => {
                           setFullName(val);
@@ -237,7 +236,7 @@ export function ContactSection() {
                     {/* Email */}
                     <div className="space-y-1">
                       <FloatingInput
-                        label="Email"
+                        label="E-mail"
                         type="email"
                         value={email}
                         onChange={(val) => {
@@ -253,7 +252,7 @@ export function ContactSection() {
                     {/* Phone Number */}
                     <div className="space-y-1">
                       <FloatingInput
-                        label="Phone number"
+                        label="Numéro de téléphone"
                         type="tel"
                         value={phone}
                         onChange={(val) => {
@@ -278,7 +277,7 @@ export function ContactSection() {
                       <label
                         className={`pointer-events-none absolute left-4 transition-all ${message.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                       >
-                        Message (optional)
+                        Message (facultatif)
                       </label>
                     </div>
 
@@ -290,10 +289,10 @@ export function ContactSection() {
                       {loading ? (
                         <>
                           <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
-                          Sending...
+                          Envoi...
                         </>
                       ) : (
-                        "Send message →"
+                        "Envoyer le message →"
                       )}
                     </motion.button>
                   </motion.form>

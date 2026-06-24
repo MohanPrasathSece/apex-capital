@@ -43,15 +43,15 @@ export default function AppGate() {
     return (
       <div className="grid min-h-screen place-items-center bg-hero text-foreground px-6">
         <div className="text-center max-w-md">
-          <h1 className="font-display text-4xl md:text-5xl">Sign in to continue</h1>
+          <h1 className="font-display text-4xl md:text-5xl">Veuillez vous connecter</h1>
           <p className="mt-2 text-muted-foreground">
-            Your premium educational crypto journey awaits.
+            Votre parcours d'apprentissage crypto premium vous attend.
           </p>
           <button
             onClick={() => navigate("/")}
             className="mt-6 rounded-full border border-white/10 px-6 py-2.5 text-sm hover:bg-white/5 transition-colors cursor-pointer"
           >
-            Back to home
+            Retour à l'accueil
           </button>
         </div>
       </div>
@@ -74,16 +74,16 @@ function AppContent() {
   const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
-    { id: "intro", label: "1. Intro to Crypto", icon: BookOpen },
-    { id: "blockchain", label: "2. Blockchain Tech", icon: Cpu },
-    { id: "investing", label: "3. Asset Investing", icon: Briefcase },
-    { id: "trading", label: "4. Trading Basics", icon: LineChart },
-    { id: "ai", label: "5. AI Market Analysis", icon: Brain },
+    { id: "intro", label: "1. Intro à la Crypto", icon: BookOpen },
+    { id: "blockchain", label: "2. Tech Blockchain", icon: Cpu },
+    { id: "investing", label: "3. Investissement", icon: Briefcase },
+    { id: "trading", label: "4. Bases du Trading", icon: LineChart },
+    { id: "ai", label: "5. Analyse Marché IA", icon: Brain },
     { id: "diversification", label: "6. Diversification", icon: Layers },
-    { id: "risk", label: "7. Risk Management", icon: Sliders },
-    { id: "trends", label: "8. Market Trends", icon: TrendingUp },
-    { id: "security", label: "9. Security Checklist", icon: Shield },
-    { id: "faq", label: "10. Questions & FAQs", icon: HelpCircle },
+    { id: "risk", label: "7. Gestion des Risques", icon: Sliders },
+    { id: "trends", label: "8. Tendances Marché", icon: TrendingUp },
+    { id: "security", label: "9. Sécurité Checklist", icon: Shield },
+    { id: "faq", label: "10. Support & FAQs", icon: HelpCircle },
   ];
 
   return (
@@ -97,14 +97,13 @@ function AppContent() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex rounded-full glass px-4 py-1 text-xs text-primary mb-4"
           >
-            Institutional Portal // Hello, {user?.name}
+            Portail Institutionnel // Bonjour, {user?.name}
           </motion.div>
           <h1 className="font-display text-5xl md:text-7xl tracking-tight">
-            Premium <span className="text-gradient italic">Crypto Intelligence</span>
+            Intelligence <span className="text-gradient italic">Crypto Premium</span>
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-muted-foreground">
-            A comprehensive, high-fidelity curriculum guiding serious investors from
-            first-principles blockchain mechanisms to institutional market intelligence.
+            Un programme complet et de haute fidélité guidant les investisseurs sérieux des mécanismes fondamentaux de la blockchain à l'intelligence de marché institutionnelle.
           </p>
         </div>
       </section>
@@ -135,7 +134,7 @@ function AppContent() {
 
             {/* Platform Tag */}
             <div className="text-[10px] uppercase tracking-wider text-primary font-semibold">
-              Lumen Core Client
+              Client Lumen Principal
             </div>
           </div>
 
@@ -144,7 +143,7 @@ function AppContent() {
             {/* Sidebar Navigation */}
             <div className="bg-black/20 border-b md:border-b-0 md:border-r border-white/5 p-4 flex flex-row md:flex-col gap-2 overflow-x-auto md:overflow-y-auto scrollbar-none shrink-0">
               <div className="hidden md:block text-[10px] uppercase font-bold tracking-widest text-muted-foreground/60 px-3 mb-2">
-                Chapters
+                Chapitres
               </div>
               {tabs.map((tab, idx) => {
                 const IconComponent = tab.icon;
@@ -214,33 +213,30 @@ function IntroductionTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 1 // Principles
+          Chapitre 1 // Principes
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Introduction to Cryptocurrency</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Introduction à la Crypto-monnaie</h2>
         <p className="text-muted-foreground text-base md:text-lg mt-2">
-          Cryptocurrency represents the convergence of cryptography, game theory, and distributed
-          computing to solve the double-spending problem without central authorities.
+          La crypto-monnaie représente la convergence de la cryptographie, de la théorie des jeux et de l'informatique distribuée pour résoudre le problème de la double dépense sans autorité centrale.
         </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="glass p-5 rounded-2xl space-y-2 border border-white/5 hover:border-primary/20 transition-all group">
           <div className="text-primary font-display text-xl group-hover:translate-x-1 transition-transform flex items-center gap-2">
-            The Evolution of Money <ArrowRight className="h-4 w-4" />
+            L'évolution de la monnaie <ArrowRight className="h-4 w-4" />
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Transitioning from commodity-based gold standards to fiat-based government credit, and
-            finally to trustless mathematical consensus.
+            Passage d'étalons-or basés sur des matières premières au crédit gouvernemental basé sur la monnaie fiduciaire, et enfin à un consensus mathématique sans confiance.
           </p>
         </div>
 
         <div className="glass p-5 rounded-2xl space-y-2 border border-white/5 hover:border-primary/20 transition-all group">
           <div className="text-primary font-display text-xl group-hover:translate-x-1 transition-transform flex items-center gap-2">
-            Centralized vs. Decentralized <ArrowRight className="h-4 w-4" />
+            Centralisé vs Décentralisé <ArrowRight className="h-4 w-4" />
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Eliminating singular failure points (central banks, ledger clearing houses) and
-            replacing them with public validation networks.
+            Élimination des points de défaillance uniques (banques centrales, chambres de compensation) au profit de réseaux de validation publics.
           </p>
         </div>
       </div>
@@ -248,10 +244,9 @@ function IntroductionTab() {
       {/* Floating illustration */}
       <div className="glass rounded-2xl p-6 border border-white/5 relative overflow-hidden flex items-center justify-between">
         <div className="space-y-2 z-10 max-w-md">
-          <h4 className="font-medium text-sm">Key Takeaway</h4>
+          <h4 className="font-medium text-sm">Règle clé</h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Cryptocurrency is not merely digital currency; it is programmable equity, governance
-            consensus, and sovereign ownership in the global digital web.
+            La crypto-monnaie n'est pas une simple monnaie numérique ; c'est un capital programmable, un consensus de gouvernance et une propriété souveraine dans le réseau numérique mondial.
           </p>
         </div>
         <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-20 select-none hidden sm:block pointer-events-none">
@@ -272,45 +267,43 @@ function BlockchainTab() {
     { id: 3, state: "idle" },
     { id: 4, state: "idle" },
   ]);
-  const [status, setStatus] = useState("Idle. Awaiting transaction broadcast...");
+  const [status, setStatus] = useState("Inactif. En attente de la diffusion de la transaction...");
 
   const simulateConsensus = async () => {
-    setStatus("Broadcasting transaction...");
+    setStatus("Diffusion de la transaction...");
     setNodes((prev) => prev.map((n) => (n.id === 1 ? { ...n, state: "active" } : n)));
     await new Promise((r) => setTimeout(r, 800));
 
-    setStatus("Verifying signatures & double-spend protection...");
+    setStatus("Vérification des signatures et protection contre la double dépense...");
     setNodes((prev) => prev.map((n) => (n.id === 2 || n.id === 3 ? { ...n, state: "active" } : n)));
     await new Promise((r) => setTimeout(r, 1200));
 
-    setStatus("Achieving network consensus (mining/validation block)...");
+    setStatus("Obtention du consensus réseau (bloc de minage/validation)...");
     setNodes((prev) => prev.map((n) => ({ ...n, state: "consensus" })));
     await new Promise((r) => setTimeout(r, 1000));
 
-    setStatus("Success! Block written and distributed globally.");
+    setStatus("Succès ! Bloc écrit et distribué mondialement.");
     await new Promise((r) => setTimeout(r, 2000));
     setNodes((prev) => prev.map((n) => ({ ...n, state: "idle" })));
-    setStatus("Idle. Awaiting transaction broadcast...");
+    setStatus("Inactif. En attente de la diffusion de la transaction...");
   };
 
   return (
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 2 // Cryptographic Infrastructure
+          Chapitre 2 // Infrastructure Cryptographique
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Understanding Blockchain</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Comprendre la Blockchain</h2>
         <p className="text-muted-foreground text-base mt-1">
-          A blockchain is an append-only cryptographic database distributed across a peer-to-peer
-          network. Blocks containing transactions are cryptographically chained to prevent
-          alterations.
+          Une blockchain est une base de données cryptographique en ajout uniquement, distribuée sur un réseau pair à pair. Les blocs contenant les transactions sont liés de manière cryptographique pour empêcher toute modification.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-[1.5fr_1fr]">
         <div className="glass p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
           <div>
-            <h4 className="text-sm font-medium mb-3">Consensus Visualizer</h4>
+            <h4 className="text-sm font-medium mb-3">Visualiseur de Consensus</h4>
             <div className="flex justify-around items-center h-32 relative bg-black/20 rounded-xl px-2">
               <div className="absolute inset-x-0 h-0.5 bg-white/5 z-0" />
               {nodes.map((node) => (
@@ -324,9 +317,11 @@ function BlockchainTab() {
                           : "border-white/10 bg-white/5 text-muted-foreground"
                     }`}
                   >
-                    Node{node.id}
+                    Nœud{node.id}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-2 capitalize">{node.state}</div>
+                  <div className="text-xs text-muted-foreground mt-2 capitalize">
+                    {node.state === "idle" ? "inactif" : node.state === "active" ? "actif" : "consensus"}
+                  </div>
                 </div>
               ))}
             </div>
@@ -335,24 +330,22 @@ function BlockchainTab() {
             <span className="text-xs font-mono text-muted-foreground italic">{status}</span>
             <button
               onClick={simulateConsensus}
-              disabled={status !== "Idle. Awaiting transaction broadcast..."}
+              disabled={status !== "Inactif. En attente de la diffusion de la transaction..."}
               className="bg-primary text-primary-foreground font-semibold text-xs px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-glow hover:scale-105 transition-transform disabled:opacity-50 disabled:scale-100 cursor-pointer"
             >
-              <Play className="h-3 w-3 fill-current" /> Broadcast
+              <Play className="h-3 w-3 fill-current" /> Diffuser
             </button>
           </div>
         </div>
 
         <div className="space-y-3 flex flex-col justify-center">
           <div className="border border-white/5 bg-white/[0.02] p-4 rounded-xl">
-            <div className="text-sm font-semibold text-primary">Consensus Types</div>
+            <div className="text-sm font-semibold text-primary">Types de Consensus</div>
             <div className="mt-1 text-sm text-muted-foreground">
-              <strong>Proof of Work (PoW):</strong> Nodes expend computing energy to solve
-              cryptographic hashes (e.g. Bitcoin).
+              <strong>Proof of Work (PoW):</strong> Les nœuds dépensent de l'énergie informatique pour résoudre des hachages cryptographiques (ex. Bitcoin).
             </div>
             <div className="mt-2 text-sm text-muted-foreground">
-              <strong>Proof of Stake (PoS):</strong> Validators stake native assets to earn right to
-              append blocks (e.g. Ethereum).
+              <strong>Proof of Stake (PoS):</strong> Les validateurs jalonnent (stakent) des actifs natifs pour obtenir le droit d'ajouter des blocs (ex. Ethereum).
             </div>
           </div>
         </div>
@@ -369,28 +362,27 @@ function InvestingTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 3 // Allocations
+          Chapitre 3 // Allocations
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Digital Asset Investing</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Investissement en Actifs Numériques</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Smart digital asset investing requires shifting from speculative day-trading to
-          understanding value capture mechanisms, demand drivers, and protocol economies.
+          L'investissement intelligent dans les actifs numériques exige de passer du day-trading spéculatif à la compréhension des mécanismes de capture de valeur, des moteurs de demande et de l'économie des protocoles.
         </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
         {[
           {
-            t: "Store of Value",
-            d: "Sovereign digital assets with programmatic scarcity (e.g., Bitcoin) acting as a hedge against inflation and monetary debasement.",
+            t: "Réserve de Valeur",
+            d: "Actifs numériques souverains à rareté programmée (ex. Bitcoin) agissant comme une couverture contre l'inflation et la dépréciation monétaire.",
           },
           {
-            t: "Smart Contract Platforms",
-            d: "De-facto digital computing layers (e.g., Ethereum, Solana) that capture transaction fees to reward network participants.",
+            t: "Plateformes de Contrats Intelligents",
+            d: "Couches de calcul numérique de facto (ex. Ethereum, Solana) qui capturent les frais de transaction pour récompenser les participants au réseau.",
           },
           {
-            t: "Tokenized Cash Flow",
-            d: "DeFi protocols that generate revenue (yields, swap fees) and distribute value to token holders via buybacks or staking.",
+            t: "Flux de Trésorerie Tokenisés",
+            d: "Protocoles DeFi qui génèrent des revenus (rendements, frais d'échange) et distribuent de la valeur aux détenteurs de jetons via des rachats ou du staking.",
           },
         ].map((c, i) => (
           <div
@@ -404,11 +396,9 @@ function InvestingTab() {
       </div>
 
       <div className="glass rounded-xl p-5 border border-white/5 bg-gradient-to-r from-transparent to-primary/5">
-        <div className="text-xs font-semibold text-primary">Protocol Fee Metrics</div>
+        <div className="text-xs font-semibold text-primary">Indicateurs de Frais de Protocole</div>
         <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-          Before allocating capital, evaluate the **Price-to-Fees (P/F)** ratio. Real yield
-          protocols accrue net fees from platform utility rather than simple inflationary emissions.
-          Always choose assets with positive real yields.
+          Avant d'allouer du capital, évaluez le ratio **Prix-sur-Frais (P/F)**. Les protocoles à rendement réel accumulent des frais nets grâce à l'utilité de la plateforme plutôt qu'à de simples émissions inflationnistes. Choisissez toujours des actifs avec des rendements réels positifs.
         </p>
       </div>
     </div>
@@ -473,8 +463,8 @@ function TradingTab() {
 
   const handleOrderSubmit = (type: "Buy" | "Sell") => {
     const total = Number(inputPrice) * Number(inputAmount);
-    toast.success(`${type} Order Executed!`, {
-      description: `Submitted order to ${type.toLowerCase()} ${inputAmount} BTC at $${Number(inputPrice).toLocaleString()} (Total: $${total.toLocaleString()})`,
+    toast.success(`Ordre de ${type === "Buy" ? "Achat" : "Vente"} exécuté !`, {
+      description: `Ordre soumis pour ${type === "Buy" ? "acheter" : "vendre"} ${inputAmount} BTC à $${Number(inputPrice).toLocaleString()} (Total: $${total.toLocaleString()})`,
     });
   };
 
@@ -482,12 +472,11 @@ function TradingTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 4 // Markets
+          Chapitre 4 // Marchés
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Crypto Trading Basics</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Bases du Trading Crypto</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Understanding price discovery through liquid order books, margin ratios, and basic limit /
-          market orders.
+          Comprendre la découverte des prix à travers les carnets d'ordres liquides, les ratios de marge et les ordres de base limit / market.
         </p>
       </div>
 
@@ -495,7 +484,7 @@ function TradingTab() {
         {/* Animated Candlestick Chart */}
         <div className="glass p-5 rounded-2xl border border-white/5 flex flex-col justify-between">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold">Simulated BTC/USDT Feed</span>
+            <span className="text-xs font-semibold">Flux BTC/USDT Simulé</span>
             <span className="text-xs tabular-nums text-primary font-mono">$67,412.45</span>
           </div>
 
@@ -530,7 +519,7 @@ function TradingTab() {
             })}
           </div>
           <div className="text-xs text-muted-foreground/60 text-center mt-2 font-mono">
-            1M INTERVAL · DELAYED FEED
+            INTERVALLE 1M · FLUX DIFFÉRÉ
           </div>
         </div>
 
@@ -538,7 +527,7 @@ function TradingTab() {
         <div className="space-y-4">
           <div className="glass p-4 rounded-xl border border-white/5">
             <div className="text-xs font-mono uppercase text-muted-foreground/80 mb-2">
-              Order Book
+              Carnet d'Ordres
             </div>
             <div className="space-y-1">
               {orderBook.map((ord, idx) => (
@@ -558,14 +547,14 @@ function TradingTab() {
             <div className="flex gap-2">
               <input
                 type="number"
-                placeholder="Price"
+                placeholder="Prix"
                 value={inputPrice}
                 onChange={(e) => setInputPrice(e.target.value)}
                 className="w-1/2 bg-white/5 border border-white/10 rounded-lg text-xs p-2 focus:outline-none focus:border-primary/50 text-center"
               />
               <input
                 type="number"
-                placeholder="Amount"
+                placeholder="Quantité"
                 value={inputAmount}
                 onChange={(e) => setInputAmount(e.target.value)}
                 className="w-1/2 bg-white/5 border border-white/10 rounded-lg text-xs p-2 focus:outline-none focus:border-primary/50 text-center"
@@ -576,13 +565,13 @@ function TradingTab() {
                 onClick={() => handleOrderSubmit("Buy")}
                 className="w-1/2 bg-primary text-primary-foreground font-semibold text-xs py-2 rounded-xl hover:scale-105 transition-all cursor-pointer"
               >
-                Buy (Limit)
+                Acheter (Limit)
               </button>
               <button
                 onClick={() => handleOrderSubmit("Sell")}
                 className="w-1/2 border border-[#FF5F56]/20 bg-[#FF5F56]/10 text-[#FF5F56] font-semibold text-xs py-2 rounded-xl hover:scale-105 transition-all cursor-pointer"
               >
-                Sell (Limit)
+                Vendre (Limit)
               </button>
             </div>
           </div>
@@ -600,12 +589,11 @@ function AITab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 5 // Intelligence
+          Chapitre 5 // Intelligence
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">AI & Market Analysis</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">IA & Analyse de Marché</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Utilizing algorithmic systems and natural language sentiment indexes to identify trading
-          setups, anomalies, and structural reversals.
+          Utilisation de systèmes algorithmiques et d'indices de sentiment en langage naturel pour identifier des configurations de trading, des anomalies et des retournements structurels.
         </p>
       </div>
 
@@ -613,13 +601,13 @@ function AITab() {
         <div className="space-y-4">
           <div className="glass p-5 rounded-2xl border border-white/5">
             <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3 font-semibold">
-              AI Sentiment Feed
+              Flux de Sentiment IA
             </h4>
             <div className="space-y-3">
               {[
-                { label: "Institutional Inflows", score: "Extremely Bullish", val: 92 },
-                { label: "Social Media Fear Index", score: "Neutral / Fear", val: 38 },
-                { label: "Derivatives Leverage Index", score: "Slight Overheating", val: 74 },
+                { label: "Flux Entrants Institutionnels", score: "Extrêmement Haussier", val: 92 },
+                { label: "Indice de Peur des Réseaux Sociaux", score: "Neutre / Peur", val: 38 },
+                { label: "Indice de Levier des Dérivés", score: "Légère Surchauffe", val: 74 },
               ].map((item, idx) => (
                 <div key={idx} className="space-y-1.5">
                   <div className="flex justify-between text-xs">
@@ -651,16 +639,14 @@ function AITab() {
         <div className="border border-white/5 bg-white/[0.02] p-5 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="text-xs uppercase tracking-wider text-primary font-bold">
-              Lumen AI Analysis Summary
+              Résumé de l'Analyse IA Lumen
             </div>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-              "System analysis suggests that macro liquidity remains positive. Short-term
-              consolidations around dynamic EMAs have shaken out late leverage. Funding rates are
-              resetting towards baseline, presenting logical risk-defined accumulation ranges."
+              "L'analyse du système suggère que la liquidité macro reste positive. Les consolidations à court terme autour des EMA dynamiques ont éliminé l'effet de levier tardif. Les taux de financement se réinitialisent vers leur niveau de référence, offrant des zones d'accumulation logiques définies par le risque."
             </p>
           </div>
           <div className="mt-4 text-xs text-muted-foreground italic font-mono">
-            UPDATED: JUST NOW · MODEL v4.2
+            MIS À JOUR : À L'INSTANT · MODÈLE v4.2
           </div>
         </div>
       </div>
@@ -676,24 +662,23 @@ function DiversificationTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 6 // Strategy
+          Chapitre 6 // Stratégie
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Portfolio Diversification</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Diversification de Portefeuille</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Strategic asset allocation reduces drawdown risk and protects against asset-specific
-          failures while capturing multi-sector upside.
+          L'allocation stratégique d'actifs réduit le risque de baisse et protège contre les défaillances spécifiques aux actifs tout en capturant le potentiel de hausse multi-sectoriel.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="glass p-5 rounded-2xl border border-white/5 space-y-4">
-          <h4 className="text-sm font-medium">Lumen Balanced Blueprint</h4>
+          <h4 className="text-sm font-medium">Modèle Équilibré Lumen</h4>
           <div className="space-y-3">
             {[
-              { label: "Core Layer (BTC / ETH)", val: 60, c: "bg-primary" },
-              { label: "Layer 1s & Infrastructure (SOL, DOT)", val: 20, c: "bg-teal-400" },
-              { label: "Decentralized Finance (DeFi)", val: 10, c: "bg-indigo-400" },
-              { label: "Cash & Stablecoins (USDC)", val: 10, c: "bg-muted" },
+              { label: "Couche Principale (BTC / ETH)", val: 60, c: "bg-primary" },
+              { label: "Couches 1 & Infrastructure (SOL, DOT)", val: 20, c: "bg-teal-400" },
+              { label: "Finance Décentralisée (DeFi)", val: 10, c: "bg-indigo-400" },
+              { label: "Trésorerie & Stablecoins (USDC)", val: 10, c: "bg-muted" },
             ].map((item, idx) => (
               <div key={idx} className="space-y-1">
                 <div className="flex justify-between text-sm font-mono">
@@ -713,12 +698,10 @@ function DiversificationTab() {
 
         <div className="flex flex-col justify-center border border-white/5 bg-white/[0.02] p-5 rounded-2xl space-y-3">
           <h4 className="text-xs uppercase tracking-widest text-primary font-bold">
-            Why Rebalancing Matters
+            Pourquoi le Rééquilibrage est Important
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Market volatility causes asset weightings to drift. Set quarterly rules to take profits
-            from outperforming sectors and re-allocate to underperforming layers to maintain your
-            baseline risk profiles.
+            La volatilité du marché entraîne une dérive des pondérations des actifs. Établissez des règles trimestrielles pour prendre des bénéfices dans les secteurs surperformants et les réallouer aux couches sous-performantes afin de maintenir vos profils de risque initiaux.
           </p>
         </div>
       </div>
@@ -739,25 +722,24 @@ function RiskTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 7 // Risk Control
+          Chapitre 7 // Contrôle des Risques
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Risk Management</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Gestion des Risques</h2>
         <p className="text-muted-foreground text-base mt-1">
-          In highly volatile cryptocurrency markets, risk management is the absolute divider between
-          long-term success and complete capital liquidation.
+          Dans les marchés très volatils de crypto-monnaies, la gestion des risques est la frontière absolue entre le succès à long terme et la liquidation complète du capital.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-[1.2fr_1fr]">
         <div className="glass p-5 rounded-2xl border border-white/5 space-y-4">
           <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
-            Position Size & Leverage Calculator
+            Calculateur de Taille de Position & de Levier
           </h4>
 
           <div className="space-y-3">
             <div className="space-y-1">
               <div className="flex justify-between text-sm">
-                <span>Account Risk Allocation</span>
+                <span>Allocation de Risque du Compte</span>
                 <span className="text-primary font-mono">{size}%</span>
               </div>
               <input
@@ -772,7 +754,7 @@ function RiskTab() {
 
             <div className="space-y-1">
               <div className="flex justify-between text-sm">
-                <span>Leverage Multiplier</span>
+                <span>Multiplicateur d'Effet de Levier</span>
                 <span className="text-primary font-mono">{leverage}x</span>
               </div>
               <input
@@ -790,18 +772,18 @@ function RiskTab() {
         <div className="border border-[#FF5F56]/10 bg-[#FF5F56]/5 p-5 rounded-2xl flex flex-col justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#FF5F56] font-bold">
-              <AlertTriangle className="h-4 w-4" /> Liquidation Danger
+              <AlertTriangle className="h-4 w-4" /> Danger de Liquidation
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-              If BTC falls from $67,400 to below{" "}
+              Si le BTC passe de 67 400 $ à moins de{" "}
               <strong className="text-foreground">
                 ${Math.round(liquidationPrice).toLocaleString()}
               </strong>
-              , your position will be liquidated.
+              , votre position sera liquidée.
             </p>
           </div>
           <div className="mt-4 text-xs text-muted-foreground/80 font-mono">
-            {leverage > 5 ? "⚠️ HIGH LEVERAGE WARNING" : "✅ Conservatively leveraged."}
+            {leverage > 5 ? "⚠️ AVERTISSEMENT DE LEVIER ÉLEVÉ" : "✅ Levier conservateur."}
           </div>
         </div>
       </div>
@@ -817,35 +799,30 @@ function TrendsTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 8 // Cycles
+          Chapitre 8 // Cycles
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Market Trends</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Tendances du Marché</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Understanding the 4-year halving cycle of Bitcoin and institutional flows dictates
-          mid-to-long term market directions.
+          Comprendre le cycle de division par deux (halving) de 4 ans du Bitcoin et les flux institutionnels dicte les directions du marché à moyen et long terme.
         </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="glass p-5 rounded-2xl border border-white/5 space-y-2">
           <h4 className="text-xs font-bold text-primary uppercase tracking-wider">
-            The Halving Effect
+            L'Effet du Halving
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Every 210,000 blocks, the supply emissions of new Bitcoins are cut in half.
-            Historically, this supply shock acts as the catalyst for bull market runs starting 6 to
-            12 months post-halving.
+            Tous les 210 000 blocs, les émissions de nouveaux Bitcoins sont réduites de moitié. Historiquement, ce choc d'offre agit comme catalyseur pour les marchés haussiers débutant 6 à 12 mois après le halving.
           </p>
         </div>
 
         <div className="glass p-5 rounded-2xl border border-white/5 space-y-2">
           <h4 className="text-xs font-bold text-primary uppercase tracking-wider">
-            Institutional Inflows
+            Flux Entrants Institutionnels
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            The approval of spot exchange-traded funds (ETFs) connects traditional capital pipelines
-            directly to liquid digital assets, reducing historical volatility and establishing a new
-            floor for asset values.
+            L'approbation des fonds négociés en bourse (ETF) au comptant connecte directement les flux de capitaux traditionnels aux actifs numériques liquides, réduisant la volatilité historique et établissant un nouveau plancher pour la valeur des actifs.
           </p>
         </div>
       </div>
@@ -861,25 +838,25 @@ function SecurityTab() {
     {
       id: 1,
       label:
-        "Enabled 2-factor authentication on all exchange & email accounts using App Authenticator (not SMS).",
+        "Activation de l'authentification à 2 facteurs sur tous les comptes d'échange et de messagerie à l'aide d'un authentificateur d'application (pas par SMS).",
       checked: false,
     },
     {
       id: 2,
       label:
-        "Stored backup seed phrases physically on metal, not on cloud-connected devices or text documents.",
+        "Stockage des phrases de secours physiques sur du métal, pas sur des appareils connectés au cloud ou des documents texte.",
       checked: false,
     },
     {
       id: 3,
       label:
-        "Utilize a dedicated hardware wallet (cold storage) for asset holds exceeding monthly expenses.",
+        "Utilisation d'un portefeuille matériel dédié (cold storage) pour les avoirs en actifs dépassant les dépenses mensuelles.",
       checked: false,
     },
     {
       id: 4,
       label:
-        "Verify recipient contract addresses and URL links before executing browser wallet transactions.",
+        "Vérification des adresses de contrat de destinataire et des liens URL avant d'exécuter des transactions de portefeuille de navigateur.",
       checked: false,
     },
   ]);
@@ -894,20 +871,19 @@ function SecurityTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 9 // Self Custody
+          Chapitre 9 // Auto-conservation
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Security Best Practices</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Bonnes Pratiques de Sécurité</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Unlike legacy finance, there are no chargebacks or password resets on public blockchains.
-          You are entirely responsible for securing your digital assets.
+          Contrairement à la finance traditionnelle, il n'y a pas d'annulation de transaction ni de réinitialisation de mot de passe sur les blockchains publiques. Vous êtes entièrement responsable de la sécurisation de vos actifs numériques.
         </p>
       </div>
 
       <div className="glass p-5 rounded-2xl border border-white/5 space-y-4">
         <div className="flex justify-between items-center border-b border-white/5 pb-2">
-          <span className="text-xs font-semibold">Security Audit Progress</span>
+          <span className="text-xs font-semibold">Progression de l'Audit de Sécurité</span>
           <span className="text-xs text-primary font-mono">
-            {completed} / {checks.length} Complete
+            {completed} / {checks.length} Terminé
           </span>
         </div>
 
@@ -948,16 +924,16 @@ function FAQTab() {
 
   const faqs = [
     {
-      q: "What is Lumen?",
-      a: "Lumen is a curated ecosystem that provides advanced crypto education, research signals, and tools for serious institutional-grade digital asset investors.",
+      q: "Qu'est-ce que Lumen ?",
+      a: "Lumen est un écosystème sélectionné qui fournit une éducation crypto avancée, des signaux de recherche et des outils pour les investisseurs sérieux en actifs numériques de niveau institutionnel.",
     },
     {
-      q: "Can I manage digital assets directly inside the portal?",
-      a: "No, Lumen does not operate as an exchange or custodial wallet. We provide research, AI tools, calculators, and educational models, while you retain absolute custody of your funds.",
+      q: "Puis-je gérer des actifs numériques directement dans le portail ?",
+      a: "Non, Lumen ne fonctionne pas comme une plateforme d'échange ou un portefeuille dépositaire. Nous fournissons de la recherche, des outils d'IA, des calculateurs et des modèles éducatifs, tandis que vous conservez la garde absolue de vos fonds.",
     },
     {
-      q: "How do I secure my account session?",
-      a: "All sessions are encrypted server-side and recorded securely on Vercel Blob Storage. Ensure you keep your session token stored safely and logout when not in use.",
+      q: "Comment sécuriser ma session de compte ?",
+      a: "Toutes les sessions sont cryptées côté serveur et enregistrées de manière sécurisée sur Vercel Blob Storage. Assurez-vous de conserver votre jeton de session en toute sécurité et de vous déconnecter lorsque vous ne l'utilisez pas.",
     },
   ];
 
@@ -965,11 +941,11 @@ function FAQTab() {
     <div className="space-y-6">
       <div>
         <div className="text-xs font-mono text-primary uppercase tracking-widest">
-          Chapter 10 // Support
+          Chapitre 10 // Support
         </div>
-        <h2 className="font-display text-3xl md:text-4xl mt-1">Frequently Asked Questions</h2>
+        <h2 className="font-display text-3xl md:text-4xl mt-1">Foire Aux Questions</h2>
         <p className="text-muted-foreground text-base mt-1">
-          Find answers to common operational, technical, and regulatory questions.
+          Trouvez des réponses aux questions opérationnelles, techniques et réglementaires courantes.
         </p>
       </div>
 
@@ -1021,14 +997,14 @@ function AppEnquirySection() {
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!fullName.trim()) errs.name = "Name is required";
+    if (!fullName.trim()) errs.name = "Le nom complet est requis.";
     if (!email.trim()) {
-      errs.email = "Email is required";
+      errs.email = "L'adresse e-mail est requise.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errs.email = "Invalid email format";
+      errs.email = "Format d'e-mail invalide.";
     }
     if (!phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis.";
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -1055,12 +1031,12 @@ function AppEnquirySection() {
       const data = await res.json();
       if (res.ok && data.success) {
         setSubmitted(true);
-        toast.success("Enquiry received successfully!");
+        toast.success("Demande reçue avec succès !");
       } else {
-        toast.error("Failed to submit enquiry. Please try again.");
+        toast.error("Échec de l'envoi de la demande. Veuillez réessayer.");
       }
     } catch (err) {
-      toast.error("Network error. Please check your connection.");
+      toast.error("Erreur réseau. Veuillez vérifier votre connexion.");
     } finally {
       setLoading(false);
     }
@@ -1072,11 +1048,11 @@ function AppEnquirySection() {
       <div className="mx-auto max-w-xl px-6">
         <div className="text-center mb-8">
           <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-            Contact Advisory
+            Contacter le Bureau de Conseil
           </div>
-          <h2 className="mt-3 text-3xl md:text-4xl">Submit an Enquiry</h2>
+          <h2 className="mt-3 text-3xl md:text-4xl">Soumettre une Demande</h2>
           <p className="mt-1 text-xs text-muted-foreground">
-            Request direct guidance or custom portfolios from our strategist desk.
+            Demandez des conseils directs ou des portefeuilles personnalisés à notre bureau de stratèges.
           </p>
         </div>
 
@@ -1092,10 +1068,9 @@ function AppEnquirySection() {
                 <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-primary/15 text-primary">
                   <CheckCircle className="h-8 w-8" />
                 </div>
-                <h3 className="font-display text-2xl">Thank you!</h3>
+                <h3 className="font-display text-2xl">Merci !</h3>
                 <p className="text-sm text-muted-foreground max-w-sm mx-auto">
-                  Your enquiry has been received successfully. A Lumen strategist will review your
-                  profile and reach out.
+                  Votre demande a été reçue avec succès. Un stratège Lumen examinera votre profil et vous contactera.
                 </p>
               </motion.div>
             ) : (
@@ -1116,7 +1091,7 @@ function AppEnquirySection() {
                     <label
                       className={`pointer-events-none absolute left-4 transition-all ${fullName.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                     >
-                      Full Name
+                      Nom complet
                     </label>
                   </div>
                   {errors.name && (
@@ -1140,7 +1115,7 @@ function AppEnquirySection() {
                     <label
                       className={`pointer-events-none absolute left-4 transition-all ${email.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                     >
-                      Email Address
+                      Adresse e-mail
                     </label>
                   </div>
                   {errors.email && (
@@ -1164,7 +1139,7 @@ function AppEnquirySection() {
                     <label
                       className={`pointer-events-none absolute left-4 transition-all ${phone.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                     >
-                      Phone Number
+                      Numéro de téléphone
                     </label>
                   </div>
                   {errors.phone && (
@@ -1184,7 +1159,7 @@ function AppEnquirySection() {
                   <label
                     className={`pointer-events-none absolute left-4 transition-all ${message.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                   >
-                    Message (optional)
+                    Message (facultatif)
                   </label>
                 </div>
 
@@ -1196,10 +1171,10 @@ function AppEnquirySection() {
                   {loading ? (
                     <>
                       <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
-                      Processing...
+                      Traitement...
                     </>
                   ) : (
-                    "Submit enquiry"
+                    "Soumettre la demande"
                   )}
                 </button>
               </motion.form>

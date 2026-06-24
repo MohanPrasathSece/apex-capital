@@ -125,7 +125,7 @@ export function Hero() {
             <span className="absolute inset-0 animate-ping rounded-full bg-primary opacity-75" />
             <span className="relative h-1.5 w-1.5 rounded-full bg-primary" />
           </span>
-          Live • $2.4B in assets managed
+          En direct • 2,4 G$ d'actifs gérés
         </motion.div>
 
         <h1 className="mx-auto mt-6 max-w-4xl text-center text-5xl leading-[1.05] sm:text-7xl md:text-[88px]">
@@ -135,7 +135,7 @@ export function Hero() {
             transition={{ delay: 0.15 }}
             className="block"
           >
-            Invest in crypto,
+            Investissez dans la crypto,
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 30 }}
@@ -143,7 +143,7 @@ export function Hero() {
             transition={{ delay: 0.3 }}
             className="block text-gradient italic font-light"
           >
-            beautifully.
+            avec élégance.
           </motion.span>
         </h1>
 
@@ -153,8 +153,7 @@ export function Hero() {
           transition={{ delay: 0.45 }}
           className="mx-auto mt-6 max-w-xl text-center text-base text-muted-foreground sm:text-lg"
         >
-          Lumen is the refined portfolio platform for serious digital asset investors. Built with
-          institutional security, designed for elegance.
+          Lumen est la plateforme de portefeuille raffinée pour les investisseurs sérieux en actifs numériques. Conçue avec une sécurité institutionnelle, pensée pour l'élégance.
         </motion.p>
 
         <motion.div
@@ -167,14 +166,14 @@ export function Hero() {
             onClick={openSignup}
             className="group relative overflow-hidden rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.03]"
           >
-            <span className="relative z-10">Start investing →</span>
+            <span className="relative z-10">Commencer à investir →</span>
             <span className="absolute inset-0 -z-0 bg-gradient-to-r from-primary via-primary/80 to-primary [background-size:200%_100%] [background-position:0_0] transition-[background-position] duration-700 group-hover:[background-position:100%_0]" />
           </button>
           <a
             href="#platform"
             className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-foreground/90 backdrop-blur transition-colors hover:bg-white/10"
           >
-            Explore platform
+            Explorer la plateforme
           </a>
         </motion.div>
 
@@ -194,16 +193,16 @@ export function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-                <div className="ml-4 text-xs text-muted-foreground">lumen.app / portfolio</div>
+                <div className="ml-4 text-xs text-muted-foreground">lumen.app / portefeuille</div>
               </div>
               <div className="grid gap-6 md:grid-cols-[1.5fr_1fr]">
                 <div>
-                  <div className="text-xs text-muted-foreground">Total Portfolio</div>
+                  <div className="text-xs text-muted-foreground">Portefeuille Total</div>
                   <div className="flex items-baseline gap-3">
                     <div className="font-display text-5xl">
                       ${(btc * 3.84).toLocaleString(undefined, { maximumFractionDigits: 0 })}
                     </div>
-                    <div className="text-sm text-primary">+12.4%</div>
+                    <div className="text-sm text-primary">+12,4%</div>
                   </div>
                   <div className="mt-4 rounded-2xl border border-white/5 bg-black/20 p-4">
                     <Chart />
@@ -250,10 +249,10 @@ export function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -left-10 top-32 hidden md:block glass rounded-2xl p-4 shadow-card"
           >
-            <div className="text-xs text-muted-foreground">AI Recommendation</div>
-            <div className="mt-1 text-sm font-medium">Rebalance to ETH</div>
+            <div className="text-xs text-muted-foreground">Recommandation IA</div>
+            <div className="mt-1 text-sm font-medium">Rééquilibrer vers ETH</div>
             <div className="mt-2 flex items-center gap-1.5 text-xs text-primary">
-              +8.2% potential
+              +8,2% de potentiel
             </div>
           </motion.div>
           <motion.div
@@ -261,19 +260,19 @@ export function Hero() {
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             className="absolute -right-8 bottom-20 hidden md:block glass rounded-2xl p-4 shadow-card"
           >
-            <div className="text-xs text-muted-foreground">Risk Score</div>
+            <div className="text-xs text-muted-foreground">Score de risque</div>
             <div className="mt-1 font-display text-2xl">A+</div>
-            <div className="text-xs text-muted-foreground">Conservative</div>
+            <div className="text-xs text-muted-foreground">Conservateur</div>
           </motion.div>
         </motion.div>
 
         {/* stats */}
         <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
           {[
-            ["$2.4B", "Assets managed"],
-            ["280k+", "Active investors"],
-            ["180+", "Supported assets"],
-            ["99.99%", "Uptime"],
+            ["2,4 G$", "Actifs gérés"],
+            ["280k+", "Investisseurs actifs"],
+            ["180+", "Actifs pris en charge"],
+            ["99,99%", "Disponibilité"],
           ].map(([v, l]) => (
             <div key={l} className="text-center">
               <div className="font-display text-3xl md:text-4xl text-gradient">{v}</div>

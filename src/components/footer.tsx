@@ -10,58 +10,58 @@ export function Footer() {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) {
-      toast.error("Please enter an email address.");
+      toast.error("Veuillez saisir une adresse e-mail.");
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      toast.error("Please enter a valid email address.");
+      toast.error("Veuillez saisir une adresse e-mail valide.");
       return;
     }
-    toast.success("Subscribed to newsletter updates!");
+    toast.success("Abonné aux mises à jour de la newsletter !");
     setEmail("");
   };
 
   const cols = user
     ? [
         {
-          title: "Dashboard",
+          title: "Tableau de bord",
           links: [
-            { label: "Home", path: "/" },
-            { label: "Learn Hub", path: "/app" },
-            { label: "Trading Bots", path: "/trading" },
+            { label: "Accueil", path: "/" },
+            { label: "Centre d'apprentissage", path: "/app" },
+            { label: "Robots de trading", path: "/trading" },
           ],
         },
         {
-          title: "Legal",
+          title: "Légal",
           links: [
-            { label: "Terms & Conditions", path: "/terms" },
-            { label: "Privacy Policy", path: "/privacy" },
+            { label: "Conditions Générales", path: "/terms" },
+            { label: "Politique de Confidentialité", path: "/privacy" },
           ],
         },
       ]
     : [
         {
-          title: "Explore",
+          title: "Explorer",
           links: [
-            { label: "Home", path: "/" },
-            { label: "Platform", path: "/#platform" },
-            { label: "Markets", path: "/#markets" },
-            { label: "Research", path: "/#research" },
-            { label: "Pricing", path: "/#pricing" },
+            { label: "Accueil", path: "/" },
+            { label: "Plateforme", path: "/#platform" },
+            { label: "Marchés", path: "/#markets" },
+            { label: "Recherche", path: "/#research" },
+            { label: "Tarifs", path: "/#pricing" },
           ],
         },
         {
-          title: "Products",
+          title: "Produits",
           links: [
-            { label: "Learn Hub", path: "/app" },
-            { label: "Trading Bots", path: "/trading" },
+            { label: "Centre d'apprentissage", path: "/app" },
+            { label: "Robots de trading", path: "/trading" },
           ],
         },
         {
-          title: "Legal",
+          title: "Légal",
           links: [
-            { label: "Terms & Conditions", path: "/terms" },
-            { label: "Privacy Policy", path: "/privacy" },
+            { label: "Conditions Générales", path: "/terms" },
+            { label: "Politique de Confidentialité", path: "/privacy" },
           ],
         },
       ];
@@ -87,7 +87,7 @@ export function Footer() {
               <span className="font-display text-xl">Lumen</span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              A refined investment platform for the modern digital asset investor.
+              Une plateforme d'investissement raffinée pour l'investisseur d'actifs numériques moderne.
             </p>
             <form
               onSubmit={handleSubscribe}
@@ -97,14 +97,14 @@ export function Footer() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
+                placeholder="votre@email.com"
                 className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/60"
               />
               <button
                 type="submit"
                 className="rounded-full bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground cursor-pointer shadow-glow transition-transform active:scale-95"
               >
-                Subscribe
+                S'abonner
               </button>
             </form>
           </div>
@@ -138,7 +138,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
-          <div>© {new Date().getFullYear()} Lumen Capital. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Lumen Capital. Tous droits réservés.</div>
         </div>
       </div>
     </footer>

@@ -41,15 +41,15 @@ export default function TradingTerminal() {
     return (
       <div className="grid min-h-screen place-items-center bg-hero text-foreground px-6">
         <div className="text-center max-w-md">
-          <h1 className="font-display text-4xl md:text-5xl">Sign in to continue</h1>
+          <h1 className="font-display text-4xl md:text-5xl">Connectez-vous pour continuer</h1>
           <p className="mt-2 text-muted-foreground">
-            Access your automated algorithmic trading terminal.
+            Accédez à votre terminal de trading algorithmique automatisé.
           </p>
           <button
             onClick={() => navigate("/")}
             className="mt-6 rounded-full border border-white/10 px-6 py-2.5 text-sm hover:bg-white/5 transition-colors cursor-pointer"
           >
-            Back to home
+            Retour à l'accueil
           </button>
         </div>
       </div>
@@ -104,7 +104,7 @@ function TerminalContent() {
     // Add initial log
     setLogs((prev) => [
       ...prev,
-      `[${new Date().toLocaleTimeString()}] Algorithmic ${activeBot.toUpperCase()} Bot initialized with $${allocation.toLocaleString()} allocation.`,
+      `[${new Date().toLocaleTimeString()}] Bot algorithmique ${activeBot.toUpperCase()} initialisé avec une allocation de ${allocation.toLocaleString()} $.`,
     ]);
 
     const interval = setInterval(() => {
@@ -116,13 +116,13 @@ function TerminalContent() {
       if (activeBot === "grid") {
         const gridPrice = (67200 + (Math.random() - 0.49) * 300).toFixed(2);
         const profit = (Math.random() * 25).toFixed(2);
-        const action = Math.random() > 0.5 ? "BUY limit filled" : "SELL limit filled";
-        logMsg = `[${now}] Grid Bot: ${action} at $${Number(gridPrice).toLocaleString()} | Profit generated: +$${profit}`;
+        const action = Math.random() > 0.5 ? "Limite d'ACHAT exécutée" : "Limite de VENTE exécutée";
+        logMsg = `[${now}] Bot Grid : ${action} à ${Number(gridPrice).toLocaleString()} $ | Profit généré : +${profit} $`;
         profitDelta = Number(profit);
       } else if (activeBot === "dca") {
         const dcaPrice = (67350 + (Math.random() - 0.5) * 80).toFixed(2);
         const size = (0.01 + Math.random() * 0.05).toFixed(4);
-        logMsg = `[${now}] DCA Bot: Executing recurring purchase of ${size} BTC at $${Number(dcaPrice).toLocaleString()}.`;
+        logMsg = `[${now}] Bot DCA : Exécution de l'achat récurrent de ${size} BTC à ${Number(dcaPrice).toLocaleString()} $.`;
         profitDelta = (Math.random() - 0.3) * 8; // Small swing
       } else {
         // Arbitrage steps loop
@@ -134,16 +134,16 @@ function TerminalContent() {
         };
 
         if (arbitrageStep === 0) {
-          logMsg = `[${now}] Arbitrage Bot: Scanning price deviations across exchanges...`;
+          logMsg = `[${now}] Bot d'arbitrage : Analyse des écarts de prix entre les plateformes...`;
         } else if (arbitrageStep === 1) {
-          logMsg = `[${now}] Arbitrage Bot: Discrepancy found! Kraken: $${prices.kraken.toLocaleString()} | Coinbase: $${prices.coinbase.toLocaleString()}`;
+          logMsg = `[${now}] Bot d'arbitrage : Écart détecté ! Kraken : ${prices.kraken.toLocaleString()} $ | Coinbase : ${prices.coinbase.toLocaleString()} $`;
         } else if (arbitrageStep === 2) {
           const spread = prices.coinbase - prices.kraken;
           const finalProfit = Number((spread * 0.15).toFixed(2));
-          logMsg = `[${now}] Arbitrage Bot: Buy 0.15 BTC on Kraken, Sell 0.15 BTC on Coinbase. Profit: +$${finalProfit}`;
+          logMsg = `[${now}] Bot d'arbitrage : Achat de 0,15 BTC sur Kraken, Vente de 0,15 BTC sur Coinbase. Profit : +${finalProfit} $`;
           profitDelta = finalProfit;
         } else {
-          logMsg = `[${now}] Arbitrage Bot: Clearing balances and resetting delta hedges.`;
+          logMsg = `[${now}] Bot d'arbitrage : Apurement des soldes et réinitialisation des couvertures delta.`;
         }
       }
 
@@ -168,9 +168,9 @@ function TerminalContent() {
   const handleStartToggle = () => {
     setIsRunning(!isRunning);
     if (!isRunning) {
-      toast.success(`${activeBot.toUpperCase()} Bot started successfully!`);
+      toast.success(`Bot ${activeBot.toUpperCase()} démarré avec succès !`);
     } else {
-      toast.warning(`${activeBot.toUpperCase()} Bot paused.`);
+      toast.warning(`Bot ${activeBot.toUpperCase()} mis en pause.`);
     }
   };
 
@@ -179,7 +179,7 @@ function TerminalContent() {
     setLogs([]);
     setCumulativeProfit(0);
     setPerformancePoints([10, 15, 12, 18, 22, 20, 28]);
-    toast.info("Console status cleared.");
+    toast.info("Statut de la console effacé.");
   };
 
   return (
@@ -193,14 +193,13 @@ function TerminalContent() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex rounded-full glass px-4 py-1 text-xs text-primary mb-4"
           >
-            Gated Giga-Compute Terminal // Active Session
+            Terminal de Giga-Calcul Sécurisé // Session Active
           </motion.div>
           <h1 className="font-display text-5xl md:text-7xl tracking-tight">
-            AI <span className="text-gradient italic">Trading Bots</span> & Console
+            Bots de <span className="text-gradient italic">Trading IA</span> & Console
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-muted-foreground">
-            Configure, backtest, and run state-of-the-art algorithmic bots executing high-frequency
-            grid systems and triangular arbitrage strategies.
+            Configurez, testez et exécutez des bots algorithmiques de pointe appliquant des systèmes de grille à haute fréquence et des stratégies d'arbitrage triangulaire.
           </p>
         </div>
       </section>
@@ -218,18 +217,18 @@ function TerminalContent() {
                     key={type}
                     onClick={() => {
                       if (isRunning) {
-                        toast.error("Pause the active bot before switching strategies.");
+                        toast.error("Veuillez mettre le bot actif en pause avant de changer de stratégie.");
                         return;
                       }
                       setActiveBot(type);
                     }}
-                    className={`px-4 py-2 rounded-xl text-xs font-semibold capitalize transition-all cursor-pointer ${
+                    className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       activeBot === type
                         ? "bg-primary text-primary-foreground shadow-glow"
                         : "bg-white/5 border border-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground"
                     }`}
                   >
-                    {type} Bot
+                    {type === "arbitrage" ? "Bot d'Arbitrage" : `Bot ${type.toUpperCase()}`}
                   </button>
                 ))}
               </div>
@@ -249,14 +248,14 @@ function TerminalContent() {
                     </>
                   ) : (
                     <>
-                      <Play className="h-3.5 w-3.5 fill-current" /> Run Bot
+                      <Play className="h-3.5 w-3.5 fill-current" /> Lancer le bot
                     </>
                   )}
                 </button>
                 <button
                   onClick={handleReset}
                   className="p-2 rounded-xl bg-white/5 border border-white/5 text-muted-foreground hover:text-foreground hover:bg-white/10 cursor-pointer"
-                  title="Clear Console"
+                  title="Effacer la console"
                 >
                   <RotateCcw className="h-4 w-4" />
                 </button>
@@ -271,7 +270,7 @@ function TerminalContent() {
                   <div className="space-y-4">
                     <span className="text-xs font-semibold text-muted-foreground/80 flex items-center gap-1">
                       <RefreshCw className="h-3.5 w-3.5 animate-spin-slow text-primary" />{" "}
-                      Triangular Arbitrage Cycle
+                      Cycle d'arbitrage triangulaire
                     </span>
                     {/* SVG Loop Map */}
                     <div className="relative h-28 flex items-center justify-center">
@@ -371,7 +370,7 @@ function TerminalContent() {
                 ) : activeBot === "grid" ? (
                   <div className="space-y-3">
                     <span className="text-xs font-semibold text-muted-foreground/80 flex items-center gap-1">
-                      <Layers className="h-3.5 w-3.5 text-primary" /> Active Grid Lines (BTC/USDT)
+                      <Layers className="h-3.5 w-3.5 text-primary" /> Lignes de grille actives (BTC/USDT)
                     </span>
                     <div className="space-y-1.5 font-mono text-[9px]">
                       {[67600, 67500, 67400, 67300, 67200].map((price, idx) => {
@@ -382,7 +381,7 @@ function TerminalContent() {
                             className="flex items-center justify-between bg-black/20 px-3 py-1 rounded"
                           >
                             <span className={isSellLimit ? "text-red-400" : "text-primary"}>
-                              {isSellLimit ? "[SELL LIMIT]" : "[BUY LIMIT]"}
+                              {isSellLimit ? "[LIMITE VENTE]" : "[LIMITE ACHAT]"}
                             </span>
                             <span>${price.toLocaleString()}</span>
                           </div>
@@ -393,23 +392,22 @@ function TerminalContent() {
                 ) : (
                   <div className="space-y-4">
                     <span className="text-xs font-semibold text-muted-foreground/80 flex items-center gap-1">
-                      <Cpu className="h-3.5 w-3.5 text-primary" /> Dollar-Cost Averaging Config
+                      <Cpu className="h-3.5 w-3.5 text-primary" /> Configuration DCA (Dollar-Cost Averaging)
                     </span>
                     <div className="grid grid-cols-2 gap-2 text-center">
                       <div className="bg-black/20 p-2.5 rounded-xl border border-white/5">
-                        <div className="text-[10px] text-muted-foreground">Order Allocation</div>
+                        <div className="text-[10px] text-muted-foreground">Allocation par ordre</div>
                         <div className="font-display text-lg text-primary mt-0.5">
                           ${Math.round(allocation * 0.05)}
                         </div>
                       </div>
                       <div className="bg-black/20 p-2.5 rounded-xl border border-white/5">
-                        <div className="text-[10px] text-muted-foreground">Interval Rate</div>
+                        <div className="text-[10px] text-muted-foreground">Fréquence d'intervalle</div>
                         <div className="font-display text-lg text-primary mt-0.5">{frequency}m</div>
                       </div>
                     </div>
                     <p className="text-[10px] text-muted-foreground leading-relaxed">
-                      DCA bot mitigates market timing volatility by making micro-investments
-                      periodically.
+                      Le bot DCA atténue la volatilité liée au timing du marché en effectuant périodiquement des micro-investissements.
                     </p>
                   </div>
                 )}
@@ -419,7 +417,7 @@ function TerminalContent() {
               <div className="glass p-5 rounded-2xl border border-white/5 flex flex-col justify-between min-h-[220px]">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-semibold text-muted-foreground/80 flex items-center gap-1">
-                    <TrendingUp className="h-3.5 w-3.5 text-primary" /> Live Bot Profit Yield
+                    <TrendingUp className="h-3.5 w-3.5 text-primary" /> Rendement des profits du bot en direct
                   </span>
                   <span
                     className={`text-xs font-mono font-bold ${cumulativeProfit >= 0 ? "text-primary" : "text-red-400"}`}
@@ -455,7 +453,7 @@ function TerminalContent() {
                   </svg>
                 </div>
                 <div className="text-[9px] font-mono text-muted-foreground/60 text-center mt-2">
-                  CUMULATIVE PERFORMANCE DELTA
+                  DELTA DE PERFORMANCE CUMULÉE
                 </div>
               </div>
             </div>
@@ -463,7 +461,7 @@ function TerminalContent() {
             {/* Terminal Live Output Console */}
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground/85 px-1">
-                <Terminal className="h-3.5 w-3.5" /> Live Bot Output Stream
+                <Terminal className="h-3.5 w-3.5" /> Flux de sortie du bot en direct
               </div>
               <div
                 ref={logContainerRef}
@@ -471,7 +469,7 @@ function TerminalContent() {
               >
                 {logs.length === 0 ? (
                   <div className="text-muted-foreground/50 italic h-full flex items-center justify-center">
-                    Awaiting execution... Click "Run Bot" to stream transaction logs.
+                    En attente d'exécution... Cliquez sur « Lancer le bot » pour diffuser les journaux de transaction.
                   </div>
                 ) : (
                   logs.map((log, idx) => (
@@ -490,7 +488,7 @@ function TerminalContent() {
           {/* Settings Control Panel Sidebar */}
           <div className="space-y-6">
             <div className="glass-strong rounded-3xl p-6 border border-white/10 space-y-4">
-              <h3 className="font-display text-xl border-b border-white/5 pb-2">Bot Settings</h3>
+              <h3 className="font-display text-xl border-b border-white/5 pb-2">Paramètres du bot</h3>
 
               {/* Allocation */}
               <div className="space-y-1.5">
@@ -513,8 +511,8 @@ function TerminalContent() {
               {/* Action Frequency */}
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs font-mono">
-                  <span className="text-muted-foreground">Speed Interval</span>
-                  <span className="text-primary">{frequency} Actions/Min</span>
+                  <span className="text-muted-foreground">Intervalle de vitesse</span>
+                  <span className="text-primary">{frequency} actions/min</span>
                 </div>
                 <input
                   type="range"
@@ -530,7 +528,7 @@ function TerminalContent() {
 
               {/* Risk Mode */}
               <div className="space-y-1.5">
-                <span className="text-xs font-mono text-muted-foreground">Risk Execution Mode</span>
+                <span className="text-xs font-mono text-muted-foreground">Mode d'exécution des risques</span>
                 <div className="grid grid-cols-3 gap-1">
                   {(["low", "medium", "high"] as const).map((risk) => (
                     <button
@@ -543,7 +541,7 @@ function TerminalContent() {
                           : "bg-white/5 border-white/5 text-muted-foreground hover:bg-white/10"
                       } disabled:opacity-50`}
                     >
-                      {risk}
+                      {risk === "low" ? "Faible" : risk === "medium" ? "Modéré" : "Élevé"}
                     </button>
                   ))}
                 </div>
@@ -553,12 +551,10 @@ function TerminalContent() {
             {/* Warning block */}
             <div className="border border-yellow-500/10 bg-yellow-500/[0.03] p-5 rounded-3xl space-y-2">
               <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-yellow-400 font-bold">
-                <AlertTriangle className="h-4 w-4" /> Algorithmic Disclosure
+                <AlertTriangle className="h-4 w-4" /> Divulgation algorithmique
               </div>
               <p className="text-[10px] text-muted-foreground leading-relaxed mt-1">
-                Automated bots utilize mock liquidity profiles. Performance metrics simulated in the
-                console represent simulated backtest algorithms and do not constitute live order
-                fulfillment.
+                Les bots automatisés utilisent des profils de liquidité fictifs. Les mesures de performance simulées dans la console représentent des algorithmes de backtest simulés et ne constituent pas une exécution d'ordres réels.
               </p>
             </div>
           </div>
@@ -570,32 +566,32 @@ function TerminalContent() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12">
             <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-              Quant Directory
+              Répertoire quantitatif
             </div>
-            <h2 className="mt-3 text-3xl md:text-5xl">Pre-Engineered Strategy Profiles</h2>
+            <h2 className="mt-3 text-3xl md:text-5xl">Profils de stratégies pré-conçus</h2>
             <p className="mt-1 text-xs md:text-sm text-muted-foreground">
-              Explore standardized algorithms designed and backtested by our research desk.
+              Explorez des algorithmes standardisés conçus et testés historiquement par notre bureau de recherche.
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             {[
               {
                 name: "Scalper Prime v2",
-                type: "Grid Strategy",
+                type: "Stratégie Grid",
                 win: "92.4%",
                 profit: "+18.2%",
                 risk: "Medium",
               },
               {
                 name: "Arbitrage Cycle v4",
-                type: "Triangular Arbitrage",
+                type: "Arbitrage triangulaire",
                 win: "100%",
                 profit: "+8.4%",
                 risk: "Low",
               },
               {
                 name: "DCA Accumulator",
-                type: "Dollar-Cost Averaging",
+                type: "Dollar-Cost Averaging (DCA)",
                 win: "84.1%",
                 profit: "+24.8%",
                 risk: "Low",
@@ -615,16 +611,16 @@ function TerminalContent() {
                   <span
                     className={`text-xs uppercase px-3 py-1.5 rounded-full font-bold shrink-0 ${b.risk === "Low" ? "bg-primary/10 text-primary" : "bg-yellow-400/10 text-yellow-400"}`}
                   >
-                    {b.risk} Risk
+                    {b.risk === "Low" ? "Risque faible" : "Risque modéré"}
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-6 border-t border-white/5 pt-6 font-mono">
                   <div>
-                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Simulated Win Rate</div>
+                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Taux de réussite simulé</div>
                     <div className="font-display text-2xl md:text-3xl text-foreground mt-1.5">{b.win}</div>
                   </div>
                   <div>
-                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Backtest Yield</div>
+                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Rendement du backtest</div>
                     <div className="font-display text-2xl md:text-3xl text-primary mt-1.5">{b.profit}</div>
                   </div>
                 </div>
@@ -639,33 +635,33 @@ function TerminalContent() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12">
             <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-              Risk Guardrails
+              Garde-fous des risques
             </div>
-            <h2 className="mt-3 text-3xl md:text-5xl">Structural Platform Safeguards</h2>
+            <h2 className="mt-3 text-3xl md:text-5xl">Sécurités structurelles de la plateforme</h2>
             <p className="mt-1 text-xs md:text-sm text-muted-foreground">
-              Institutional parameter limitations protecting assets against tail-risk anomalies.
+              Limitations de paramètres institutionnels protégeant les actifs contre les anomalies de risque extrême (tail-risk).
             </p>
           </div>
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                title: "Slippage Control",
-                desc: "Automated execution halts if market spread exceeds 0.15% to protect buy/sell entry rates.",
+                title: "Contrôle du slippage",
+                desc: "Arrêt automatique de l'exécution si l'écart de marché dépasse 0,15 % afin de protéger les cours d'entrée à l'achat et à la vente.",
                 icon: Sliders,
               },
               {
-                title: "API Locked Actions",
-                desc: "Write keys are constrained to specific trusted addresses. Direct withdrawal via API is prohibited.",
+                title: "Actions verrouillées par API",
+                desc: "Les clés d'écriture sont restreintes à des adresses de confiance spécifiques. Tout retrait direct via API est interdit.",
                 icon: Shield,
               },
               {
-                title: "Circuit Breakers",
-                desc: "Monitors extreme market swings and automatically triggers safety pauses for running bots.",
+                title: "Coupe-circuits",
+                desc: "Surveille les fluctuations extrêmes du marché et déclenche automatiquement des pauses de sécurité pour les bots en cours d'exécution.",
                 icon: Activity,
               },
               {
-                title: "Maximum Allocation Caps",
-                desc: "Enforces strategy exposure limits (e.g. max 25% account value per single bot asset).",
+                title: "Plafonds d'allocation maximaux",
+                desc: "Impose des limites d'exposition stratégiques (par exemple, un maximum de 25 % de la valeur du compte par actif individuel de bot).",
                 icon: Layers,
               },
             ].map((guard, i) => {
@@ -696,9 +692,6 @@ function TerminalContent() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────── */
-/*                     Advisory Bot Consultation Form           */
-/* ─────────────────────────────────────────────────────────── */
 function BotEnquirySection() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -713,14 +706,14 @@ function BotEnquirySection() {
 
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!fullName.trim()) errs.name = "Full name is required";
+    if (!fullName.trim()) errs.name = "Le nom complet est requis";
     if (!email.trim()) {
-      errs.email = "Email address is required";
+      errs.email = "L'adresse e-mail est requise";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errs.email = "Invalid email format";
+      errs.email = "Format d'e-mail invalide";
     }
     if (!phone.trim()) {
-      errs.phone = "Phone number is required";
+      errs.phone = "Le numéro de téléphone est requis";
     }
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -749,12 +742,12 @@ function BotEnquirySection() {
       const data = await res.json();
       if (res.ok && data.success) {
         setSubmitted(true);
-        toast.success("Enquiry received successfully!");
+        toast.success("Demande reçue avec succès !");
       } else {
-        toast.error("Failed to submit enquiry. Please try again.");
+        toast.error("Échec de l'envoi de la demande. Veuillez réessayer.");
       }
     } catch (err) {
-      toast.error("Network error. Please check your connection.");
+      toast.error("Erreur réseau. Veuillez vérifier votre connexion.");
     } finally {
       setLoading(false);
     }
@@ -766,11 +759,11 @@ function BotEnquirySection() {
       <div className="mx-auto max-w-xl px-6">
         <div className="text-center mb-8">
           <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-            Advisory Desk
+            Bureau de conseil
           </div>
-          <h2 className="mt-3 text-3xl md:text-4xl">Custom Bot Strategy</h2>
+          <h2 className="mt-3 text-3xl md:text-4xl">Stratégie de bot personnalisée</h2>
           <p className="mt-1 text-xs text-muted-foreground">
-            Request custom algorithmic scripts or high-frequency trading advice from our quant desk.
+            Demandez des scripts algorithmiques personnalisés ou des conseils en trading haute fréquence à notre équipe quantitative.
           </p>
         </div>
 
@@ -786,9 +779,9 @@ function BotEnquirySection() {
                 <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-primary/15 text-primary">
                   <CheckCircle className="h-8 w-8" />
                 </div>
-                <h3 className="font-display text-2xl">Thank you!</h3>
+                <h3 className="font-display text-2xl">Merci !</h3>
                 <p className="text-sm text-muted-foreground max-w-sm mx-auto leading-relaxed">
-                  Thank you! Your enquiry has been received successfully.
+                  Merci ! Votre demande a été reçue avec succès.
                 </p>
               </motion.div>
             ) : (
@@ -809,7 +802,7 @@ function BotEnquirySection() {
                     <label
                       className={`pointer-events-none absolute left-4 transition-all ${fullName.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                     >
-                      Full Name
+                      Nom complet
                     </label>
                   </div>
                   {errors.name && (
@@ -833,7 +826,7 @@ function BotEnquirySection() {
                     <label
                       className={`pointer-events-none absolute left-4 transition-all ${email.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                     >
-                      Email Address
+                      Adresse e-mail
                     </label>
                   </div>
                   {errors.email && (
@@ -857,7 +850,7 @@ function BotEnquirySection() {
                     <label
                       className={`pointer-events-none absolute left-4 transition-all ${phone.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                     >
-                      Phone Number
+                      Numéro de téléphone
                     </label>
                   </div>
                   {errors.phone && (
@@ -877,7 +870,7 @@ function BotEnquirySection() {
                   <label
                     className={`pointer-events-none absolute left-4 transition-all ${message.length > 0 ? "top-1.5 text-[10px] uppercase tracking-wider text-primary" : "top-3.5 text-sm text-muted-foreground"}`}
                   >
-                    Tell us more about your target variables... (optional)
+                    Parlez-nous de vos variables cibles... (facultatif)
                   </label>
                 </div>
 
@@ -889,10 +882,10 @@ function BotEnquirySection() {
                   {loading ? (
                     <>
                       <span className="h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground/30 border-t-primary-foreground" />
-                      Processing...
+                      Traitement...
                     </>
                   ) : (
-                    "Submit enquiry"
+                    "Envoyer la demande"
                   )}
                 </button>
               </motion.form>
