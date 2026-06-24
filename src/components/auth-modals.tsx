@@ -2,9 +2,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useAuth } from "@/lib/auth";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 export function AuthModals() {
   const { modal, closeModal, login, signup, openLogin, openSignup } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -40,6 +42,7 @@ export function AuthModals() {
         if (res.success) {
           toast.success("Successfully logged in.");
           setEmail("");
+          navigate("/trading");
         } else {
           toast.error(res.error || "Login failed.");
         }
@@ -50,6 +53,7 @@ export function AuthModals() {
           setEmail("");
           setName("");
           setPhone("");
+          navigate("/trading");
         } else {
           toast.error(res.error || "Signup failed.");
         }
