@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { put, list } from "@vercel/blob";
+import { put, list, get } from "@vercel/blob";
 import { randomUUID } from "crypto";
 
 const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN;
@@ -82,13 +82,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       try {
         const userBlob = blobs.find((b) => b.pathname === `users/${cleanEmail}.json`);
         if (userBlob) {
-          const userResponse = await fetch(userBlob.url, {
-            headers: {
-              Authorization: `Bearer ${BLOB_TOKEN}`,
-            },
+          const result = await get(userBlob.url, {
+            access: "private",
+            token: BLOB_TOKEN,
           });
-          if (userResponse.ok) {
-            const userData = await userResponse.json();
+          if (result) {
+            const userData = await new Response(result.stream).json();
             if (userData.name) userName = userData.name;
           }
         }
