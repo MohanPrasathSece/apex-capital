@@ -577,7 +577,7 @@ function TerminalContent() {
               Explore standardized algorithms designed and backtested by our research desk.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-3">
             {[
               {
                 name: "Scalper Prime v2",
@@ -603,29 +603,29 @@ function TerminalContent() {
             ].map((b, i) => (
               <div
                 key={i}
-                className="glass p-6 rounded-3xl border border-white/5 space-y-4 hover:border-primary/30 transition-all"
+                className="glass p-8 md:p-10 rounded-3xl border border-white/5 space-y-6 hover:border-primary/30 transition-all flex flex-col justify-between min-h-[280px]"
               >
-                <div className="flex justify-between items-start">
+                <div className="flex justify-between items-start gap-4">
                   <div>
-                    <h4 className="font-display text-2xl text-gradient">{b.name}</h4>
-                    <span className="text-xs text-muted-foreground uppercase font-mono">
+                    <h4 className="font-display text-3xl md:text-4xl text-gradient leading-tight">{b.name}</h4>
+                    <span className="text-xs md:text-sm text-muted-foreground uppercase font-mono tracking-wider block mt-1">
                       {b.type}
                     </span>
                   </div>
                   <span
-                    className={`text-xs uppercase px-2.5 py-1 rounded-full ${b.risk === "Low" ? "bg-primary/10 text-primary" : "bg-yellow-400/10 text-yellow-400"}`}
+                    className={`text-xs uppercase px-3 py-1.5 rounded-full font-bold shrink-0 ${b.risk === "Low" ? "bg-primary/10 text-primary" : "bg-yellow-400/10 text-yellow-400"}`}
                   >
                     {b.risk} Risk
                   </span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 border-t border-white/5 pt-4 text-sm font-mono">
+                <div className="grid grid-cols-2 gap-6 border-t border-white/5 pt-6 font-mono">
                   <div>
-                    <div className="text-xs text-muted-foreground">Simulated Win Rate</div>
-                    <div className="font-bold text-foreground mt-0.5">{b.win}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Simulated Win Rate</div>
+                    <div className="font-display text-2xl md:text-3xl text-foreground mt-1.5">{b.win}</div>
                   </div>
                   <div>
-                    <div className="text-xs text-muted-foreground">Backtest Yield</div>
-                    <div className="font-bold text-primary mt-0.5">{b.profit}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Backtest Yield</div>
+                    <div className="font-display text-2xl md:text-3xl text-primary mt-1.5">{b.profit}</div>
                   </div>
                 </div>
               </div>
@@ -646,7 +646,7 @@ function TerminalContent() {
               Institutional parameter limitations protecting assets against tail-risk anomalies.
             </p>
           </div>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 title: "Slippage Control",
@@ -673,13 +673,15 @@ function TerminalContent() {
               return (
                 <div
                   key={i}
-                  className="glass p-5 rounded-2xl border border-white/5 hover:bg-white/[0.03] transition-colors space-y-3"
+                  className="glass p-8 md:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors space-y-5 flex flex-col justify-between min-h-[280px]"
                 >
-                  <div className="h-10 w-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                    <IconComp className="h-5 w-5" />
+                  <div className="space-y-4">
+                    <div className="h-14 w-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+                      <IconComp className="h-6 w-6" />
+                    </div>
+                    <h4 className="font-display text-2xl md:text-3xl leading-tight">{guard.title}</h4>
                   </div>
-                  <h4 className="font-display text-xl">{guard.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{guard.desc}</p>
+                  <p className="text-sm md:text-base text-muted-foreground/80 leading-relaxed mt-2">{guard.desc}</p>
                 </div>
               );
             })}
