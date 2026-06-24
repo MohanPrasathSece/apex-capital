@@ -91,7 +91,7 @@ function AppContent() {
       {/* Intro Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-12">
         <div className="absolute inset-0 grid-bg" />
-        <div className="relative mx-auto max-w-6xl px-6 text-center">
+        <div className="relative mx-auto max-w-7xl px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ function AppContent() {
       </section>
 
       {/* Mac Browser Layout Container */}
-      <section className="relative pb-24 px-6 max-w-6xl mx-auto">
+      <section className="relative pb-24 px-6 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ function AppContent() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(idx)}
-                    className={`flex items-center gap-3 w-auto md:w-full text-left px-3 py-2.5 rounded-xl text-sm transition-all relative shrink-0 ${
+                    className={`flex items-center gap-3 w-auto md:w-full text-left px-3 py-2.5 rounded-xl text-base transition-all relative shrink-0 ${
                       activeTab === idx
                         ? "text-primary bg-primary/15 font-medium"
                         : "text-muted-foreground hover:text-foreground hover:bg-white/5"
@@ -217,7 +217,7 @@ function IntroductionTab() {
           Chapter 1 // Principles
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Introduction to Cryptocurrency</h2>
-        <p className="text-muted-foreground text-sm md:text-base mt-2">
+        <p className="text-muted-foreground text-base md:text-lg mt-2">
           Cryptocurrency represents the convergence of cryptography, game theory, and distributed
           computing to solve the double-spending problem without central authorities.
         </p>
@@ -228,7 +228,7 @@ function IntroductionTab() {
           <div className="text-primary font-display text-xl group-hover:translate-x-1 transition-transform flex items-center gap-2">
             The Evolution of Money <ArrowRight className="h-4 w-4" />
           </div>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             Transitioning from commodity-based gold standards to fiat-based government credit, and
             finally to trustless mathematical consensus.
           </p>
@@ -238,7 +238,7 @@ function IntroductionTab() {
           <div className="text-primary font-display text-xl group-hover:translate-x-1 transition-transform flex items-center gap-2">
             Centralized vs. Decentralized <ArrowRight className="h-4 w-4" />
           </div>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             Eliminating singular failure points (central banks, ledger clearing houses) and
             replacing them with public validation networks.
           </p>
@@ -249,7 +249,7 @@ function IntroductionTab() {
       <div className="glass rounded-2xl p-6 border border-white/5 relative overflow-hidden flex items-center justify-between">
         <div className="space-y-2 z-10 max-w-md">
           <h4 className="font-medium text-sm">Key Takeaway</h4>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             Cryptocurrency is not merely digital currency; it is programmable equity, governance
             consensus, and sovereign ownership in the global digital web.
           </p>
@@ -300,7 +300,7 @@ function BlockchainTab() {
           Chapter 2 // Cryptographic Infrastructure
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Understanding Blockchain</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           A blockchain is an append-only cryptographic database distributed across a peer-to-peer
           network. Blocks containing transactions are cryptographically chained to prevent
           alterations.
@@ -326,15 +326,13 @@ function BlockchainTab() {
                   >
                     Node{node.id}
                   </div>
-                  <div className="text-[10px] text-muted-foreground mt-2 capitalize">
-                    {node.state}
-                  </div>
+                  <div className="text-xs text-muted-foreground mt-2 capitalize">{node.state}</div>
                 </div>
               ))}
             </div>
           </div>
           <div className="mt-4 flex items-center justify-between gap-4">
-            <span className="text-[11px] font-mono text-muted-foreground italic">{status}</span>
+            <span className="text-xs font-mono text-muted-foreground italic">{status}</span>
             <button
               onClick={simulateConsensus}
               disabled={status !== "Idle. Awaiting transaction broadcast..."}
@@ -347,12 +345,12 @@ function BlockchainTab() {
 
         <div className="space-y-3 flex flex-col justify-center">
           <div className="border border-white/5 bg-white/[0.02] p-4 rounded-xl">
-            <div className="text-xs font-semibold text-primary">Consensus Types</div>
-            <div className="mt-1 text-xs text-muted-foreground">
+            <div className="text-sm font-semibold text-primary">Consensus Types</div>
+            <div className="mt-1 text-sm text-muted-foreground">
               <strong>Proof of Work (PoW):</strong> Nodes expend computing energy to solve
               cryptographic hashes (e.g. Bitcoin).
             </div>
-            <div className="mt-2 text-xs text-muted-foreground">
+            <div className="mt-2 text-sm text-muted-foreground">
               <strong>Proof of Stake (PoS):</strong> Validators stake native assets to earn right to
               append blocks (e.g. Ethereum).
             </div>
@@ -374,7 +372,7 @@ function InvestingTab() {
           Chapter 3 // Allocations
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Digital Asset Investing</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Smart digital asset investing requires shifting from speculative day-trading to
           understanding value capture mechanisms, demand drivers, and protocol economies.
         </p>
@@ -400,14 +398,14 @@ function InvestingTab() {
             className="glass p-4 rounded-xl border border-white/5 hover:bg-white/[0.05] transition-colors"
           >
             <div className="font-display text-lg text-primary">{c.t}</div>
-            <p className="text-[11px] text-muted-foreground mt-1.5 leading-relaxed">{c.d}</p>
+            <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed">{c.d}</p>
           </div>
         ))}
       </div>
 
       <div className="glass rounded-xl p-5 border border-white/5 bg-gradient-to-r from-transparent to-primary/5">
         <div className="text-xs font-semibold text-primary">Protocol Fee Metrics</div>
-        <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+        <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
           Before allocating capital, evaluate the **Price-to-Fees (P/F)** ratio. Real yield
           protocols accrue net fees from platform utility rather than simple inflationary emissions.
           Always choose assets with positive real yields.
@@ -487,7 +485,7 @@ function TradingTab() {
           Chapter 4 // Markets
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Crypto Trading Basics</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Understanding price discovery through liquid order books, margin ratios, and basic limit /
           market orders.
         </p>
@@ -531,7 +529,7 @@ function TradingTab() {
               );
             })}
           </div>
-          <div className="text-[9px] text-muted-foreground/60 text-center mt-2 font-mono">
+          <div className="text-xs text-muted-foreground/60 text-center mt-2 font-mono">
             1M INTERVAL · DELAYED FEED
           </div>
         </div>
@@ -546,7 +544,7 @@ function TradingTab() {
               {orderBook.map((ord, idx) => (
                 <div
                   key={idx}
-                  className={`flex justify-between text-[11px] font-mono py-0.5 px-2 rounded ${ord.type === "sell" ? "bg-[#FF5F56]/5 text-[#FF5F56]/90" : "bg-primary/5 text-primary"}`}
+                  className={`flex justify-between text-xs font-mono py-0.5 px-2 rounded ${ord.type === "sell" ? "bg-[#FF5F56]/5 text-[#FF5F56]/90" : "bg-primary/5 text-primary"}`}
                 >
                   <span>${ord.price.toLocaleString()}</span>
                   <span>{ord.amount}</span>
@@ -605,7 +603,7 @@ function AITab() {
           Chapter 5 // Intelligence
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">AI & Market Analysis</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Utilizing algorithmic systems and natural language sentiment indexes to identify trading
           setups, anomalies, and structural reversals.
         </p>
@@ -655,13 +653,13 @@ function AITab() {
             <div className="text-xs uppercase tracking-wider text-primary font-bold">
               Lumen AI Analysis Summary
             </div>
-            <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
+            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               "System analysis suggests that macro liquidity remains positive. Short-term
               consolidations around dynamic EMAs have shaken out late leverage. Funding rates are
               resetting towards baseline, presenting logical risk-defined accumulation ranges."
             </p>
           </div>
-          <div className="mt-4 text-[10px] text-muted-foreground italic font-mono">
+          <div className="mt-4 text-xs text-muted-foreground italic font-mono">
             UPDATED: JUST NOW · MODEL v4.2
           </div>
         </div>
@@ -681,7 +679,7 @@ function DiversificationTab() {
           Chapter 6 // Strategy
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Portfolio Diversification</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Strategic asset allocation reduces drawdown risk and protects against asset-specific
           failures while capturing multi-sector upside.
         </p>
@@ -698,7 +696,7 @@ function DiversificationTab() {
               { label: "Cash & Stablecoins (USDC)", val: 10, c: "bg-muted" },
             ].map((item, idx) => (
               <div key={idx} className="space-y-1">
-                <div className="flex justify-between text-xs font-mono">
+                <div className="flex justify-between text-sm font-mono">
                   <span>{item.label}</span>
                   <span>{item.val}%</span>
                 </div>
@@ -717,7 +715,7 @@ function DiversificationTab() {
           <h4 className="text-xs uppercase tracking-widest text-primary font-bold">
             Why Rebalancing Matters
           </h4>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             Market volatility causes asset weightings to drift. Set quarterly rules to take profits
             from outperforming sectors and re-allocate to underperforming layers to maintain your
             baseline risk profiles.
@@ -744,7 +742,7 @@ function RiskTab() {
           Chapter 7 // Risk Control
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Risk Management</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           In highly volatile cryptocurrency markets, risk management is the absolute divider between
           long-term success and complete capital liquidation.
         </p>
@@ -758,7 +756,7 @@ function RiskTab() {
 
           <div className="space-y-3">
             <div className="space-y-1">
-              <div className="flex justify-between text-xs">
+              <div className="flex justify-between text-sm">
                 <span>Account Risk Allocation</span>
                 <span className="text-primary font-mono">{size}%</span>
               </div>
@@ -773,7 +771,7 @@ function RiskTab() {
             </div>
 
             <div className="space-y-1">
-              <div className="flex justify-between text-xs">
+              <div className="flex justify-between text-sm">
                 <span>Leverage Multiplier</span>
                 <span className="text-primary font-mono">{leverage}x</span>
               </div>
@@ -794,7 +792,7 @@ function RiskTab() {
             <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-[#FF5F56] font-bold">
               <AlertTriangle className="h-4 w-4" /> Liquidation Danger
             </div>
-            <p className="text-xs text-muted-foreground leading-relaxed mt-2">
+            <p className="text-sm text-muted-foreground leading-relaxed mt-2">
               If BTC falls from $67,400 to below{" "}
               <strong className="text-foreground">
                 ${Math.round(liquidationPrice).toLocaleString()}
@@ -802,7 +800,7 @@ function RiskTab() {
               , your position will be liquidated.
             </p>
           </div>
-          <div className="mt-4 text-[10px] text-muted-foreground/80 font-mono">
+          <div className="mt-4 text-xs text-muted-foreground/80 font-mono">
             {leverage > 5 ? "⚠️ HIGH LEVERAGE WARNING" : "✅ Conservatively leveraged."}
           </div>
         </div>
@@ -822,7 +820,7 @@ function TrendsTab() {
           Chapter 8 // Cycles
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Market Trends</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Understanding the 4-year halving cycle of Bitcoin and institutional flows dictates
           mid-to-long term market directions.
         </p>
@@ -833,7 +831,7 @@ function TrendsTab() {
           <h4 className="text-xs font-bold text-primary uppercase tracking-wider">
             The Halving Effect
           </h4>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             Every 210,000 blocks, the supply emissions of new Bitcoins are cut in half.
             Historically, this supply shock acts as the catalyst for bull market runs starting 6 to
             12 months post-halving.
@@ -844,7 +842,7 @@ function TrendsTab() {
           <h4 className="text-xs font-bold text-primary uppercase tracking-wider">
             Institutional Inflows
           </h4>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             The approval of spot exchange-traded funds (ETFs) connects traditional capital pipelines
             directly to liquid digital assets, reducing historical volatility and establishing a new
             floor for asset values.
@@ -899,7 +897,7 @@ function SecurityTab() {
           Chapter 9 // Self Custody
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Security Best Practices</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Unlike legacy finance, there are no chargebacks or password resets on public blockchains.
           You are entirely responsible for securing your digital assets.
         </p>
@@ -930,7 +928,7 @@ function SecurityTab() {
                 {item.checked && <span className="text-[10px]">✓</span>}
               </div>
               <span
-                className={`text-xs ${item.checked ? "line-through text-muted-foreground" : "text-foreground"}`}
+                className={`text-sm ${item.checked ? "line-through text-muted-foreground" : "text-foreground"}`}
               >
                 {item.label}
               </span>
@@ -970,7 +968,7 @@ function FAQTab() {
           Chapter 10 // Support
         </div>
         <h2 className="font-display text-3xl md:text-4xl mt-1">Frequently Asked Questions</h2>
-        <p className="text-muted-foreground text-sm mt-1">
+        <p className="text-muted-foreground text-base mt-1">
           Find answers to common operational, technical, and regulatory questions.
         </p>
       </div>
@@ -993,7 +991,7 @@ function FAQTab() {
                   exit={{ height: 0 }}
                   className="overflow-hidden bg-black/20"
                 >
-                  <p className="p-4 text-xs text-muted-foreground leading-relaxed border-t border-white/5">
+                  <p className="p-4 text-sm text-muted-foreground leading-relaxed border-t border-white/5">
                     {faq.a}
                   </p>
                 </motion.div>

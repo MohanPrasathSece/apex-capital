@@ -187,7 +187,7 @@ function TerminalContent() {
       {/* Intro Header */}
       <section className="relative overflow-hidden pt-32 pb-10">
         <div className="absolute inset-0 grid-bg" />
-        <div className="relative mx-auto max-w-6xl px-6 text-center">
+        <div className="relative mx-auto max-w-7xl px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ function TerminalContent() {
       </section>
 
       {/* Main Terminal Widget */}
-      <section className="relative pb-24 px-6 max-w-6xl mx-auto">
+      <section className="relative pb-24 px-6 max-w-7xl mx-auto">
         <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
           {/* Main Bot Controller */}
           <div className="glass-strong rounded-3xl p-6 border border-white/10 space-y-6 flex flex-col justify-between">
@@ -467,7 +467,7 @@ function TerminalContent() {
               </div>
               <div
                 ref={logContainerRef}
-                className="h-44 bg-black/60 rounded-2xl p-4 font-mono text-[10px] md:text-xs text-primary overflow-y-auto space-y-1.5 border border-white/5 scrollbar-thin select-text"
+                className="h-60 bg-black/60 rounded-2xl p-4 font-mono text-xs md:text-sm text-primary overflow-y-auto space-y-1.5 border border-white/5 scrollbar-thin select-text"
               >
                 {logs.length === 0 ? (
                   <div className="text-muted-foreground/50 italic h-full flex items-center justify-center">
@@ -567,7 +567,7 @@ function TerminalContent() {
 
       {/* Section 1: Pre-Engineered Quant Directory */}
       <section className="relative py-20 border-t border-white/5 bg-black/5">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12">
             <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
               Quant Directory
@@ -608,23 +608,23 @@ function TerminalContent() {
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-display text-2xl text-gradient">{b.name}</h4>
-                    <span className="text-[10px] text-muted-foreground uppercase font-mono">
+                    <span className="text-xs text-muted-foreground uppercase font-mono">
                       {b.type}
                     </span>
                   </div>
                   <span
-                    className={`text-[10px] uppercase px-2 py-0.5 rounded-full ${b.risk === "Low" ? "bg-primary/10 text-primary" : "bg-yellow-400/10 text-yellow-400"}`}
+                    className={`text-xs uppercase px-2.5 py-1 rounded-full ${b.risk === "Low" ? "bg-primary/10 text-primary" : "bg-yellow-400/10 text-yellow-400"}`}
                   >
                     {b.risk} Risk
                   </span>
                 </div>
-                <div className="grid grid-cols-2 gap-4 border-t border-white/5 pt-4 text-xs font-mono">
+                <div className="grid grid-cols-2 gap-4 border-t border-white/5 pt-4 text-sm font-mono">
                   <div>
-                    <div className="text-[10px] text-muted-foreground">Simulated Win Rate</div>
+                    <div className="text-xs text-muted-foreground">Simulated Win Rate</div>
                     <div className="font-bold text-foreground mt-0.5">{b.win}</div>
                   </div>
                   <div>
-                    <div className="text-[10px] text-muted-foreground">Backtest Yield</div>
+                    <div className="text-xs text-muted-foreground">Backtest Yield</div>
                     <div className="font-bold text-primary mt-0.5">{b.profit}</div>
                   </div>
                 </div>
@@ -636,7 +636,7 @@ function TerminalContent() {
 
       {/* Section 2: Algorithmic Safeguards & Risk Guardrails */}
       <section className="relative py-20 border-t border-white/5 bg-black/10">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12">
             <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
               Risk Guardrails
@@ -679,7 +679,7 @@ function TerminalContent() {
                     <IconComp className="h-5 w-5" />
                   </div>
                   <h4 className="font-display text-xl">{guard.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{guard.desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{guard.desc}</p>
                 </div>
               );
             })}
