@@ -170,7 +170,7 @@ export function AuthModals() {
             <div className="mt-6 text-center text-xs text-muted-foreground">
               {modal === "login" ? (
                 <>
-                  Nouveau sur Lumen ?{" "}
+                  Nouveau sur Elite Chain ?{" "}
                   <button
                     onClick={openSignup}
                     className="text-primary hover:underline cursor-pointer"

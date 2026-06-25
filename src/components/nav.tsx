@@ -28,10 +28,10 @@ export function Nav() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary to-primary/40 shadow-glow" />
               <div className="absolute inset-[3px] rounded-md bg-background/80 backdrop-blur" />
               <div className="absolute inset-0 grid place-items-center text-xs font-bold text-primary">
-                L
+                E
               </div>
             </div>
-            <span className="font-display text-xl tracking-tight">Lumen</span>
+            <span className="font-display text-xl tracking-tight">Elite Chain</span>
           </Link>
 
           {/* Desktop Navigation */}

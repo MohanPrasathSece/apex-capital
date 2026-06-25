@@ -29,7 +29,7 @@ export function Loader() {
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-primary/30 shadow-glow"
               />
               <div className="absolute inset-[5px] grid place-items-center rounded-xl bg-background">
-                <span className="font-display text-2xl text-primary">L</span>
+                <span className="font-display text-2xl text-primary">E</span>
               </div>
             </motion.div>
             <motion.div
@@ -38,7 +38,7 @@ export function Loader() {
               transition={{ delay: 0.3 }}
               className="mt-6 font-display text-xl tracking-wide"
             >
-              Lumen
+              Elite Chain
             </motion.div>
             <div className="mt-4 h-px w-32 overflow-hidden bg-white/10">
               <motion.div

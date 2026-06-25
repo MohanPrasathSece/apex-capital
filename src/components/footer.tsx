@@ -81,10 +81,10 @@ export function Footer() {
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary to-primary/40 shadow-glow" />
                 <div className="absolute inset-[3px] rounded-md bg-background/80" />
                 <div className="absolute inset-0 grid place-items-center text-xs font-bold text-primary">
-                  L
+                  E
                 </div>
               </div>
-              <span className="font-display text-xl">Lumen</span>
+              <span className="font-display text-xl">Elite Chain</span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Une plateforme d'investissement raffinée pour l'investisseur d'actifs numériques moderne.
@@ -138,7 +138,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/5 pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
-          <div>© {new Date().getFullYear()} Lumen Capital. Tous droits réservés.</div>
+          <div>© {new Date().getFullYear()} Elite Chain. Tous droits réservés.</div>
         </div>
       </div>
     </footer>

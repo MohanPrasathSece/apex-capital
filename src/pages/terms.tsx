@@ -12,7 +12,7 @@ export default function TermsConditions() {
   const sections = [
     {
       title: "1. Acceptation des conditions",
-      text: 'En accédant à la plateforme Lumen Capital ("Site web" ou "Service"), en y naviguant ou en l\'utilisant, vous reconnaissez avoir lu, compris et accepté d\'être lié par ces Conditions Générales. Si vous n\'êtes pas d\'accord, vous devez immédiatement cesser d\'accéder à la plateforme.',
+      text: 'En accédant à la plateforme Elite Chain ("Site web" ou "Service"), en y naviguant ou en l\'utilisant, vous reconnaissez avoir lu, compris et accepté d\'être lié par ces Conditions Générales. Si vous n\'êtes pas d\'accord, vous devez immédiatement cesser d\'accéder à la plateforme.',
     },
     {
       title: "2. Éligibilité",
@@ -36,7 +36,7 @@ export default function TermsConditions() {
     },
     {
       title: "7. Propriété intellectuelle",
-      text: "Tout le matériel de ce Site web, y compris les textes, les systèmes de conception personnalisés, les icônes, les graphiques, les graphiques interactifs, les logos et les scripts de serveur, sont la propriété intellectuelle exclusive de Lumen Capital et sont protégés par les lois internationales sur le droit d'auteur.",
+      text: "Tout le matériel de ce Site web, y compris les textes, les systèmes de conception personnalisés, les icônes, les graphiques, les graphiques interactifs, les logos et les scripts de serveur, sont la propriété intellectuelle exclusive de Elite Chain et sont protégés par les lois internationales sur le droit d'auteur.",
     },
     {
       title: "8. Exactitude des informations",
@@ -48,7 +48,7 @@ export default function TermsConditions() {
     },
     {
       title: "10. Aucun conseil en investissement",
-      text: "Lumen Capital ne fonctionne pas comme un conseiller en investissement, un courtier ou un consultant financier. Nous ne construisons pas de portefeuilles personnalisés et ne gérons pas de fonds. Consultez toujours un professionnel agréé avant de prendre des décisions d'investissement.",
+      text: "Elite Chain ne fonctionne pas comme un conseiller en investissement, un courtier ou un consultant financier. Nous ne construisons pas de portefeuilles personnalisés et ne gérons pas de fonds. Consultez toujours un professionnel agréé avant de prendre des décisions d'investissement.",
     },
     {
       title: "11. Divulgation des risques liés aux crypto-monnaies",
@@ -60,11 +60,11 @@ export default function TermsConditions() {
     },
     {
       title: "13. Limitation de responsabilité",
-      text: "Dans la mesure maximale permise par la loi, Lumen Capital, ses affiliés, dirigeants et développeurs ne seront pas responsables des dommages directs, indirects, accessoires, spéciaux ou consécutifs résultant de votre utilisation ou de votre incapacité à utiliser la plateforme.",
+      text: "Dans la mesure maximale permise par la loi, Elite Chain, ses affiliés, dirigeants et développeurs ne seront pas responsables des dommages directs, indirects, accessoires, spéciaux ou consécutifs résultant de votre utilisation ou de votre incapacité à utiliser la plateforme.",
     },
     {
       title: "14. Indemnisation",
-      text: "Vous acceptez d'indemniser, de défendre et de dégager de toute responsabilité Lumen Capital, ses administrateurs, employés et développeurs contre toute réclamation, perte ou responsabilité juridique découlant de votre violation de ces Conditions ou d'une mauvaise utilisation du Site web.",
+      text: "Vous acceptez d'indemniser, de défendre et de dégager de toute responsabilité Elite Chain, ses administrateurs, employés et développeurs contre toute réclamation, perte ou responsabilité juridique découlant de votre violation de ces Conditions ou d'une mauvaise utilisation du Site web.",
     },
     {
       title: "15. Liens tiers",
@@ -96,7 +96,7 @@ export default function TermsConditions() {
     },
     {
       title: "22. Coordonnées de contact",
-      text: "Pour toute demande concernant ces Conditions, veuillez contacter notre service juridique à hello@lumen.capital.",
+      text: "Pour toute demande concernant ces Conditions, veuillez contacter notre service juridique à hello@elitechain.capital.",
     },
     {
       title: "23. Date de dernière mise à jour",
@@ -131,7 +131,7 @@ export default function TermsConditions() {
               Conditions Générales
             </h1>
             <p className="mt-2 text-muted-foreground text-sm">
-              Veuillez lire attentivement ces Conditions Générales avant d'utiliser les services de Lumen Capital.
+              Veuillez lire attentivement ces Conditions Générales avant d'utiliser les services de Elite Chain.
             </p>
           </div>
 

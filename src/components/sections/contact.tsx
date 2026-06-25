@@ -4,8 +4,8 @@ import { toast } from "sonner";
 
 const FAQ = [
   {
-    q: "Lumen est-il réglementé ?",
-    a: "Lumen Capital opère sous des entités agréées dans l'UE, au Royaume-Uni et aux États-Unis, avec les certifications SOC 2 Type II et ISO 27001.",
+    q: "Elite Chain est-il réglementé ?",
+    a: "Elite Chain opère sous des entités agréées dans l'UE, au Royaume-Uni et aux États-Unis, avec les certifications SOC 2 Type II et ISO 27001.",
   },
   {
     q: "Comment les actifs sont-ils conservés ?",
@@ -119,7 +119,7 @@ export function ContactSection() {
 
             <div className="mt-10 space-y-3">
               {[
-                ["hello@lumen.capital", "E-mail"],
+                ["hello@elitechain.capital", "E-mail"],
                 ["+1 (415) 555-0182", "Téléphone"],
                 ["San Francisco · Londres · Singapour", "Bureaux"],
               ].map(([v, l]) => (

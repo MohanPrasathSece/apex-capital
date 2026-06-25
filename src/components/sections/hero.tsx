@@ -153,8 +153,8 @@ export function Hero() {
           transition={{ delay: 0.45 }}
           className="mx-auto mt-6 max-w-xl text-center text-base text-muted-foreground sm:text-lg"
         >
-          Lumen est la plateforme de portefeuille raffinée pour les investisseurs sérieux en actifs numériques. Conçue avec une sécurité institutionnelle, pensée pour l'élégance.
-        </motion.p>
+          Elite Chain est la plateforme de portefeuille raffinée pour les investisseurs sérieux en actifs numériques. Conçue avec une sécurité institutionnelle, pensée pour l'élégance.
+</motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -193,7 +193,7 @@ export function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-                <div className="ml-4 text-xs text-muted-foreground">lumen.app / portefeuille</div>
+                <div className="ml-4 text-xs text-muted-foreground">elitechain.app / portefeuille</div>
               </div>
               <div className="grid gap-6 md:grid-cols-[1.5fr_1fr]">
                 <div>

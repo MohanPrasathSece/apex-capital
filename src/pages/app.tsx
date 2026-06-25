@@ -128,13 +128,13 @@ function AppContent() {
             {/* Address bar */}
             <div className="hidden sm:block flex-1 max-w-md mx-4">
               <div className="w-full text-center text-xs font-mono text-muted-foreground/70 bg-white/5 border border-white/5 py-1.5 rounded-lg select-all">
-                lumen.app/education/{tabs[activeTab].id}
+                elitechain.app/education/{tabs[activeTab].id}
               </div>
             </div>
 
             {/* Platform Tag */}
             <div className="text-[10px] uppercase tracking-wider text-primary font-semibold">
-              Client Lumen Principal
+              Client Elite Chain Principal
             </div>
           </div>
 
@@ -639,7 +639,7 @@ function AITab() {
         <div className="border border-white/5 bg-white/[0.02] p-5 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="text-xs uppercase tracking-wider text-primary font-bold">
-              Résumé de l'Analyse IA Lumen
+              Résumé de l'Analyse IA Elite Chain
             </div>
             <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
               "L'analyse du système suggère que la liquidité macro reste positive. Les consolidations à court terme autour des EMA dynamiques ont éliminé l'effet de levier tardif. Les taux de financement se réinitialisent vers leur niveau de référence, offrant des zones d'accumulation logiques définies par le risque."
@@ -672,7 +672,7 @@ function DiversificationTab() {
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="glass p-5 rounded-2xl border border-white/5 space-y-4">
-          <h4 className="text-sm font-medium">Modèle Équilibré Lumen</h4>
+          <h4 className="text-sm font-medium">Modèle Équilibré Elite Chain</h4>
           <div className="space-y-3">
             {[
               { label: "Couche Principale (BTC / ETH)", val: 60, c: "bg-primary" },
@@ -924,12 +924,12 @@ function FAQTab() {
 
   const faqs = [
     {
-      q: "Qu'est-ce que Lumen ?",
-      a: "Lumen est un écosystème sélectionné qui fournit une éducation crypto avancée, des signaux de recherche et des outils pour les investisseurs sérieux en actifs numériques de niveau institutionnel.",
+      q: "Qu'est-ce que Elite Chain ?",
+      a: "Elite Chain est un écosystème sélectionné qui fournit une éducation crypto avancée, des signaux de recherche et des outils pour les investisseurs sérieux en actifs numériques de niveau institutionnel.",
     },
     {
       q: "Puis-je gérer des actifs numériques directement dans le portail ?",
-      a: "Non, Lumen ne fonctionne pas comme une plateforme d'échange ou un portefeuille dépositaire. Nous fournissons de la recherche, des outils d'IA, des calculateurs et des modèles éducatifs, tandis que vous conservez la garde absolue de vos fonds.",
+      a: "Non, Elite Chain ne fonctionne pas comme une plateforme d'échange ou un portefeuille dépositaire. Nous fournissons de la recherche, des outils d'IA, des calculateurs et des modèles éducatifs, tandis que vous conservez la garde absolue de vos fonds.",
     },
     {
       q: "Comment sécuriser ma session de compte ?",
@@ -1070,7 +1070,7 @@ function AppEnquirySection() {
                 </div>
                 <h3 className="font-display text-2xl">Merci !</h3>
                 <p className="text-sm text-muted-foreground max-w-sm mx-auto">
-                  Votre demande a été reçue avec succès. Un stratège Lumen examinera votre profil et vous contactera.
+                  Votre demande a été reçue avec succès. Un stratège Elite Chain examinera votre profil et vous contactera.
                 </p>
               </motion.div>
             ) : (

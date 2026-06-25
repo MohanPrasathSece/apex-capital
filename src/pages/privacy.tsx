@@ -12,11 +12,11 @@ export default function PrivacyPolicy() {
   const sections = [
     {
       title: "1. Introduction",
-      text: 'Lumen Capital ("nous", "notre" ou "nos") respecte votre vie privée et s\'engage à protéger vos données personnelles. Cette politique de confidentialité décrit comment nous collectons, utilisons, stockons et partageons vos informations personnelles lorsque vous visitez ou interagissez avec notre plateforme.',
+      text: 'Elite Chain ("nous", "notre" ou "nos") respecte votre vie privée et s\'engage à protéger vos données personnelles. Cette politique de confidentialité décrit comment nous collectons, utilisons, stockons et partageons vos informations personnelles lorsque vous visitez ou interagissez avec notre plateforme.',
     },
     {
       title: "2. Définitions",
-      text: 'Dans cette politique, "Informations Personnelles" désigne toute donnée relative à une personne physique identifiée ou identifiable. "Service" désigne les plateformes éducatives de crypto-monnaie et les applications web de Lumen. "CRM" désigne notre système tiers de gestion des prospects et des affiliés.',
+      text: 'Dans cette politique, "Informations Personnelles" désigne toute donnée relative à une personne physique identifiée ou identifiable. "Service" désigne les plateformes éducatives de crypto-monnaie et les applications web de Elite Chain. "CRM" désigne notre système tiers de gestion des prospects et des affiliés.',
     },
     {
       title: "3. Informations que nous collectons",
@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "9. CRM & Prestataires de services tiers",
-      text: "Les formulaires de contact et d'inscription sécurisés de Lumen soumettent automatiquement des données à notre service CRM Core (inwo.crmcore.me) pour traiter et suivre les prospects investisseurs. Cette intégration est gérée via des points de terminaison proxy backend sécurisés pour protéger vos identifiants.",
+      text: "Les formulaires de contact et d'inscription sécurisés de Elite Chain soumettent automatiquement des données à notre service CRM Core (inwo.crmcore.me) pour traiter et suivre les prospects investisseurs. Cette intégration est gérée via des points de terminaison proxy backend sécurisés pour protéger vos identifiants.",
     },
     {
       title: "10. Cookies",
@@ -88,7 +88,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "20. Coordonnées de contact",
-      text: "Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité, veuillez contacter notre responsable de la protection de la vie privée à hello@lumen.capital.",
+      text: "Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité, veuillez contacter notre responsable de la protection de la vie privée à hello@elitechain.capital.",
     },
     {
       title: "21. Date de dernière mise à jour",

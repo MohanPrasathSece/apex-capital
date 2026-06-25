@@ -41,7 +41,7 @@ export function WhyChoose() {
           className="mx-auto max-w-2xl text-center"
         >
           <div className="inline-flex rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-            Pourquoi Lumen
+            Pourquoi Elite Chain
           </div>
           <h2 className="mt-4 text-4xl md:text-6xl">
             Conçu pour la <span className="text-gradient italic">conviction</span>
