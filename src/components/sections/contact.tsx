@@ -43,8 +43,11 @@ export function ContactSection() {
       errs.email = "Format d'e-mail invalide";
     }
 
-    if (!phone.trim()) {
-      errs.phone = "Le numéro de téléphone est requis";
+    const cleanNum = phone.replace(/\s+/g, "");
+    if (!cleanNum) {
+      errs.phone = "Veuillez entrer un numéro de téléphone";
+    } else if (!/^(\+41|0041|41|0)?[1-9]\d{8}$/.test(cleanNum)) {
+      errs.phone = "Veuillez entrer un numéro suisse valide (ex: 079 123 45 67)";
     }
 
     setErrors(errs);

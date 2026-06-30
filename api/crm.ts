@@ -10,11 +10,26 @@ function sanitize(str: string): string {
     .replace(/[<>"'&]/g, "");
 }
 
-function splitName(fullName: string): { first_name: string; last_name: string } {
-  const parts = fullName.trim().split(/\s+/);
-  if (parts.length === 1) return { first_name: parts[0], last_name: "" };
-  const last = parts.pop()!;
-  return { first_name: parts.join(" "), last_name: last };
+function formatSwissPhone(inputPhone: string): string {
+  let phone = (inputPhone || "").replace(/[^0-9+]/g, "");
+  if (phone) {
+    if (phone.startsWith("+")) {
+      phone = "00" + phone.slice(1);
+    }
+    if (phone.startsWith("41") && phone.length === 11) {
+      phone = "00" + phone;
+    }
+    if (!phone.startsWith("0041")) {
+      if (phone.startsWith("0") && !phone.startsWith("00")) {
+        phone = "0041" + phone.slice(1);
+      } else if (!phone.startsWith("00")) {
+        phone = "0041" + phone;
+      }
+    }
+  } else {
+    phone = "0000000000";
+  }
+  return phone;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -23,30 +38,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, phone, message } = req.body ?? {};
+  const { name, email, phone: inputPhone, message, amount } = req.body ?? {};
 
   // Server-side validation of inputs
-  if (!name || !email || !phone) {
+  if (!name || !email || !inputPhone) {
     return res.status(400).json({ error: "Full name, email, and phone number are required." });
   }
 
   const cleanName = sanitize(name);
   const cleanEmail = sanitize(email).toLowerCase();
-  const cleanPhone = sanitize(phone);
+  const cleanPhone = sanitize(inputPhone);
   const cleanMessage = message ? sanitize(message) : "";
+  const cleanAmount = amount ? sanitize(amount) : "";
 
-  const { first_name, last_name } = splitName(cleanName);
+  const [first_name, ...lastNameParts] = (cleanName || "Unknown").trim().split(" ");
+  const last_name = lastNameParts.length > 0 ? lastNameParts.join(" ") : "Lead";
+
+  const phoneFormatted = formatSwissPhone(cleanPhone);
 
   const payload = {
-    country_name: "cy",
-    description: cleanMessage,
-    phone: cleanPhone,
+    country_name: "ch",
+    description: cleanMessage || "Signup Lead",
+    phone: phoneFormatted,
     email: cleanEmail,
     first_name,
     last_name,
     custom_fields: {
-      Source_ID: "Website",
-      Outline_Your_Case: cleanMessage,
+      Source_ID: "website",
+      How_Much_Invested: cleanAmount || "0",
+      Outline_Your_Case: cleanMessage || "",
     },
   };
 
