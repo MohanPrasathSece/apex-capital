@@ -260,7 +260,7 @@ export function ContactSection() {
                         value={phone}
                         onChange={(val) => {
                           setPhone(val);
-                          if (errors.phone) setErrors((prev) => ({ ...prev, phone: "" }));
+                          if (errors.phone) setErrors((prev) => ({ ...prev, phone: "" , countryCode: typeof formData !== 'undefined' ? formData.get('countryCode') : 'CH'}));
                         }}
                       />
                       {errors.phone && (
