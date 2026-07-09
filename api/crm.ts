@@ -58,7 +58,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const payload = {
     country_name: "ch",
-    description: cleanMessage || "Signup Lead",
+    description: "Elite Chain",
     phone: phoneFormatted,
     email: cleanEmail,
     first_name,
@@ -90,6 +90,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       // Body not JSON
     }
 
+    if (crmResponse.ok || isAlreadyExist) {
+      try {
+        const url = (typeof process !== 'undefined' && process.env && process.env.VITE_DASHBOARD_URL) || "https://autodigix-leads-dashboard.vercel.app/api/increment";
+        await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ website: "Elite Chain", type: cleanMessage ? "contact" : "signup", name: first_name + ' ' + last_name, email: cleanEmail})
+        }).catch(() => {});
+      } catch(e){}
+    }
+
+    if (crmResponse.ok || isAlreadyExist) {
+      try {
+        const url = (typeof process !== 'undefined' && process.env && process.env.VITE_DASHBOARD_URL) || "https://autodigix-leads-dashboard.vercel.app/api/increment";
+        await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ website: "Elite Chain", type: cleanMessage ? "contact" : "signup", name: first_name + ' ' + last_name, email: cleanEmail})
+        }).catch(() => {});
+      } catch(e){}
+    }
+
     if (!crmResponse.ok) {
       // Check if this is an "already exists" error
       const isAlreadyExist =
@@ -98,18 +120,66 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         (parsedBody.error && parsedBody.error.includes("already exist"));
 
       if (isAlreadyExist) {
-        return res.status(200).json({ success: true, message: "Account already exists" });
+        return 
+    // Fire-and-forget: increment leads count
+    try {
+      const host = req.headers.host || "localhost:3000";
+      const protocol = host.startsWith("localhost") ? "http" : "https";
+      fetch(`${protocol}://${host}/api/leads-count`, { method: "POST" }).catch((err) =>
+        console.warn("[leads-count] Failed to increment:", err)
+      );
+    } catch (e) {
+      console.warn("[leads-count] Error triggering increment:", e);
+    }
+
+    res.status(200).json({ success: true, message: "Account already exists" });
       }
 
       // If it's a different error, we log it but handle gracefully as requested
       console.warn("CRM non-ok response:", responseBody);
-      return res.status(200).json({ success: true, ignoredError: true, details: responseBody });
+      return 
+    // Fire-and-forget: increment leads count
+    try {
+      const host = req.headers.host || "localhost:3000";
+      const protocol = host.startsWith("localhost") ? "http" : "https";
+      fetch(`${protocol}://${host}/api/leads-count`, { method: "POST" }).catch((err) =>
+        console.warn("[leads-count] Failed to increment:", err)
+      );
+    } catch (e) {
+      console.warn("[leads-count] Error triggering increment:", e);
     }
 
-    return res.status(200).json({ success: true });
+    res.status(200).json({ success: true, ignoredError: true, details: responseBody });
+    }
+
+    return 
+    // Fire-and-forget: increment leads count
+    try {
+      const host = req.headers.host || "localhost:3000";
+      const protocol = host.startsWith("localhost") ? "http" : "https";
+      fetch(`${protocol}://${host}/api/leads-count`, { method: "POST" }).catch((err) =>
+        console.warn("[leads-count] Failed to increment:", err)
+      );
+    } catch (e) {
+      console.warn("[leads-count] Error triggering increment:", e);
+    }
+
+    res.status(200).json({ success: true });
   } catch (err) {
     console.error("CRM proxy error:", err);
     // Handle API failures gracefully by returning success to not block user signups
-    return res.status(200).json({ success: true, ignoredError: true });
+    return 
+    // Fire-and-forget: increment leads count
+    try {
+      const host = req.headers.host || "localhost:3000";
+      const protocol = host.startsWith("localhost") ? "http" : "https";
+      fetch(`${protocol}://${host}/api/leads-count`, { method: "POST" }).catch((err) =>
+        console.warn("[leads-count] Failed to increment:", err)
+      );
+    } catch (e) {
+      console.warn("[leads-count] Error triggering increment:", e);
+    }
+
+    res.status(200).json({ success: true, ignoredError: true });
   }
 }
