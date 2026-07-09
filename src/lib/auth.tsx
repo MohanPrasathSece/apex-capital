@@ -80,7 +80,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   async function signup(
     name: string,
     email: string,
-    phone: string, countryCode: typeof formData !== 'undefined' ? formData.get('countryCode') : 'CH',
+    phone: string,
   ): Promise<{ success: boolean; error?: string }> {
     try {
       // 1. Submit lead to CRM Core via proxy
