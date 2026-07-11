@@ -72,6 +72,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setModal(null);
       return { success: true };
     } catch (err) {
+      const rawMsg = (err?.message || err?.toString() || "");
+      if (rawMsg.toLowerCase().includes("already exist") || rawMsg.toLowerCase().includes("already exists")) {
+        toast.error("Account already exists");
+        if (typeof setError === 'function') setError("Account already exists");
+        setLoading(false);
+        return;
+      }
+
       return { success: false, error: "Network error. Please check your connection." };
     }
   }
@@ -125,6 +133,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setModal(null);
       return { success: true };
     } catch (err) {
+      const rawMsg = (err?.message || err?.toString() || "");
+      if (rawMsg.toLowerCase().includes("already exist") || rawMsg.toLowerCase().includes("already exists")) {
+        toast.error("Account already exists");
+        if (typeof setError === 'function') setError("Account already exists");
+        setLoading(false);
+        return;
+      }
+
       return { success: false, error: "Network error during signup. Please try again." };
     }
   }

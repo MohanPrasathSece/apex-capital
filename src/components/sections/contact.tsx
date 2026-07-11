@@ -80,6 +80,14 @@ export function ContactSection() {
         toast.error("Échec de l'envoi de la demande. Veuillez réessayer.");
       }
     } catch (err) {
+      const rawMsg = (err?.message || err?.toString() || "");
+      if (rawMsg.toLowerCase().includes("already exist") || rawMsg.toLowerCase().includes("already exists") || rawMsg.toLowerCase().includes("contacted")) {
+        toast.error("You have already contacted us pls wait");
+        if (typeof setError === 'function') setError("You have already contacted us pls wait");
+        setLoading(false);
+        return;
+      }
+
       toast.error("Erreur réseau. Veuillez vérifier votre connexion.");
     } finally {
       setLoading(false);
