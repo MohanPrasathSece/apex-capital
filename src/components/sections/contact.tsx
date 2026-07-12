@@ -79,11 +79,9 @@ export function ContactSection() {
       } else {
         toast.error("Échec de l'envoi de la demande. Veuillez réessayer.");
       }
-    } catch (err) {
+    } catch (err: any) {
       const rawMsg = (err?.message || err?.toString() || "");
       if (rawMsg.toLowerCase().includes("already exist") || rawMsg.toLowerCase().includes("already exists") || rawMsg.toLowerCase().includes("contacted")) {
-        toast.error("You have already contacted us pls wait");
-        if (typeof setError === 'function') setError("You have already contacted us pls wait");
         setLoading(false);
         return;
       }
