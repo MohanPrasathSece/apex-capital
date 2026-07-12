@@ -19,6 +19,9 @@ export function useHoverScroll<T extends HTMLElement>() {
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent<T>) => {
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      return;
+    }
     if (!ref.current) return;
     const { clientY } = e;
     const { top, bottom } = ref.current.getBoundingClientRect();
@@ -37,5 +40,9 @@ export function useHoverScroll<T extends HTMLElement>() {
     scrollState.current = { active: false, speed: 0 };
   };
 
-  return { ref, onMouseMove: handleMouseMove, onMouseLeave: handleMouseLeave };
+  const handleTouchStart = () => {
+    scrollState.current = { active: false, speed: 0 };
+  };
+
+  return { ref, onMouseMove: handleMouseMove, onMouseLeave: handleMouseLeave, onTouchStart: handleTouchStart };
 }

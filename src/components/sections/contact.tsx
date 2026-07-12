@@ -35,7 +35,7 @@ export function ContactSection() {
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("CH");
   const [countryOpen, setCountryOpen] = useState(false);
-  const { ref: hoverScrollRef, onMouseMove, onMouseLeave } = useHoverScroll<HTMLDivElement>();
+  const { ref: hoverScrollRef, onMouseMove, onMouseLeave, onTouchStart } = useHoverScroll<HTMLDivElement>();
   const [message, setMessage] = useState("");
   
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -285,6 +285,7 @@ export function ContactSection() {
                               ref={hoverScrollRef}
                               onMouseMove={onMouseMove}
                               onMouseLeave={onMouseLeave}
+                              onTouchStart={onTouchStart}
                             >
                               {Object.entries(COUNTRY_PHONE_PATTERNS).map(([code, { flag, dial }]) => (
                                 <button
