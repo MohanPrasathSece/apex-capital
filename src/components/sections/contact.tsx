@@ -1,10 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
-import { COUNTRY_PHONE_PATTERNS } from "@/lib/phoneCountries";
-import { useHoverScroll } from "@/lib/useHoverScroll";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { ChevronDown } from "lucide-react";
+import { CountrySelect } from "@/components/ui/country-select";
 
 const FAQ = [
   {
@@ -34,8 +31,6 @@ export function ContactSection() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("CH");
-  const [countryOpen, setCountryOpen] = useState(false);
-  const { ref: hoverScrollRef, onMouseMove, onMouseLeave, onTouchStart } = useHoverScroll<HTMLDivElement>();
   const [message, setMessage] = useState("");
   
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -272,34 +267,7 @@ export function ContactSection() {
                     {/* Phone Number */}
                     <div className="space-y-1">
                       <div className="flex gap-2">
-                        <Popover open={countryOpen} onOpenChange={setCountryOpen}>
-                          <PopoverTrigger asChild>
-                            <button type="button" className="flex w-[100px] items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-3 py-[14px] text-sm outline-none transition-all hover:bg-white/[0.07] focus:border-primary/60 focus:bg-white/[0.07] cursor-pointer">
-                              <span>{COUNTRY_PHONE_PATTERNS[countryCode]?.flag || "🇨🇭"} {COUNTRY_PHONE_PATTERNS[countryCode]?.dial || "+41"}</span>
-                              <ChevronDown className="h-4 w-4 opacity-50" />
-                            </button>
-                          </PopoverTrigger>
-                          <PopoverContent className="w-[150px] p-0 border-white/10 bg-[#121212] z-[200]" side="bottom" align="start">
-                            <div 
-                              className="flex flex-col max-h-[300px] overflow-y-auto"
-                              ref={hoverScrollRef}
-                              onMouseMove={onMouseMove}
-                              onMouseLeave={onMouseLeave}
-                              onTouchStart={onTouchStart}
-                            >
-                              {Object.entries(COUNTRY_PHONE_PATTERNS).map(([code, { flag, dial }]) => (
-                                <button
-                                  key={code}
-                                  type="button"
-                                  className={`flex items-center px-4 py-2 text-sm text-left hover:bg-white/10 transition-colors ${code === countryCode ? "bg-white/10 text-primary" : "text-foreground"}`}
-                                  onClick={() => { setCountryCode(code); setCountryOpen(false); }}
-                                >
-                                  <span className="mr-2">{flag}</span> <span>{dial}</span>
-                                </button>
-                              ))}
-                            </div>
-                          </PopoverContent>
-                        </Popover>
+                        <CountrySelect value={countryCode} onChange={setCountryCode} />
                         <div className="flex-1">
                           <FloatingInput
                             label="Numéro de téléphone"
