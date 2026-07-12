@@ -2,7 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { toast } from "sonner";
 import { COUNTRY_PHONE_PATTERNS } from "@/lib/phoneCountries";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { ChevronDown } from "lucide-react";
 
 const FAQ = [
   {
@@ -32,6 +33,7 @@ export function ContactSection() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("CH");
+  const [countryOpen, setCountryOpen] = useState(false);
   const [message, setMessage] = useState("");
   
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -268,18 +270,28 @@ export function ContactSection() {
                     {/* Phone Number */}
                     <div className="space-y-1">
                       <div className="flex gap-2">
-                        <Select value={countryCode} onValueChange={setCountryCode}>
-                          <SelectTrigger className="w-[100px] h-auto rounded-2xl border border-white/10 bg-white/5 px-3 py-[14px] text-sm outline-none transition-all focus:border-primary/60 focus:bg-white/[0.07] appearance-none cursor-pointer">
-                            <SelectValue placeholder="Code" />
-                          </SelectTrigger>
-                          <SelectContent position="popper" side="bottom" className="z-[200] max-h-[300px]">
-                            {Object.entries(COUNTRY_PHONE_PATTERNS).map(([code, { flag, dial }]) => (
-                              <SelectItem key={code} value={code} className="cursor-pointer">
-                                {flag} {dial}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <Popover open={countryOpen} onOpenChange={setCountryOpen}>
+                          <PopoverTrigger asChild>
+                            <button type="button" className="flex w-[100px] items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-3 py-[14px] text-sm outline-none transition-all hover:bg-white/[0.07] focus:border-primary/60 focus:bg-white/[0.07] cursor-pointer">
+                              <span>{COUNTRY_PHONE_PATTERNS[countryCode]?.flag || "🇨🇭"} {COUNTRY_PHONE_PATTERNS[countryCode]?.dial || "+41"}</span>
+                              <ChevronDown className="h-4 w-4 opacity-50" />
+                            </button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-[150px] p-0 border-white/10 bg-[#121212] z-[200]" side="bottom" align="start">
+                            <div className="flex flex-col max-h-[300px] overflow-y-auto">
+                              {Object.entries(COUNTRY_PHONE_PATTERNS).map(([code, { flag, dial }]) => (
+                                <button
+                                  key={code}
+                                  type="button"
+                                  className={`flex items-center px-4 py-2 text-sm text-left hover:bg-white/10 transition-colors ${code === countryCode ? "bg-white/10 text-primary" : "text-foreground"}`}
+                                  onClick={() => { setCountryCode(code); setCountryOpen(false); }}
+                                >
+                                  <span className="mr-2">{flag}</span> <span>{dial}</span>
+                                </button>
+                              ))}
+                            </div>
+                          </PopoverContent>
+                        </Popover>
                         <div className="flex-1">
                           <FloatingInput
                             label="Numéro de téléphone"
