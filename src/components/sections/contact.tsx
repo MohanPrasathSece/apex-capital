@@ -5,6 +5,7 @@ import { COUNTRY_PHONE_PATTERNS } from "@/lib/phoneCountries";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const FAQ = [
+  {
     q: "Elite Chain est-il réglementé ?",
     a: "Elite Chain opère sous des entités agréées dans l'UE, au Royaume-Uni et aux États-Unis, avec les certifications SOC 2 Type II et ISO 27001.",
   },
