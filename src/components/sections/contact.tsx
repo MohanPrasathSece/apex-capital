@@ -82,10 +82,11 @@ export function ContactSection() {
     } catch (err: any) {
       const rawMsg = (err?.message || err?.toString() || "");
       if (rawMsg.toLowerCase().includes("already exist") || rawMsg.toLowerCase().includes("already exists") || rawMsg.toLowerCase().includes("contacted")) {
+        toast.success("Vous nous avez déjà contactés. Veuillez patienter.");
+        setSubmitted(true);
         setLoading(false);
         return;
       }
-
       toast.error("Erreur réseau. Veuillez vérifier votre connexion.");
     } finally {
       setLoading(false);
