@@ -4,6 +4,7 @@ import { useAuth } from "@/lib/auth";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { COUNTRY_PHONE_PATTERNS } from "@/lib/phoneCountries";
+import { useHoverScroll } from "@/lib/useHoverScroll";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ChevronDown } from "lucide-react";
 
@@ -15,6 +16,7 @@ export function AuthModals() {
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("CH");
   const [countryOpen, setCountryOpen] = useState(false);
+  const { ref: hoverScrollRef, onMouseMove, onMouseLeave } = useHoverScroll<HTMLDivElement>();
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -156,7 +158,12 @@ export function AuthModals() {
                         </button>
                       </PopoverTrigger>
                       <PopoverContent className="w-[150px] p-0 border-white/10 bg-[#121212] z-[200]" side="bottom" align="start">
-                        <div className="flex flex-col max-h-[300px] overflow-y-auto">
+                        <div 
+                          className="flex flex-col max-h-[300px] overflow-y-auto"
+                          ref={hoverScrollRef}
+                          onMouseMove={onMouseMove}
+                          onMouseLeave={onMouseLeave}
+                        >
                           {Object.entries(COUNTRY_PHONE_PATTERNS).map(([code, { flag, dial }]) => (
                             <button
                               key={code}
