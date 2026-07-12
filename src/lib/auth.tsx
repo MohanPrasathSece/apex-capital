@@ -15,6 +15,7 @@ interface AuthContextValue {
     name: string,
     email: string,
     phone: string,
+    countryCode?: string,
   ) => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
   openLogin: () => void;
@@ -86,13 +87,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     name: string,
     email: string,
     phone: string,
+    countryCode?: string,
   ): Promise<{ success: boolean; error?: string }> {
     try {
       // 1. Submit lead to CRM Core via proxy
       const crmRes = await fetch("/api/crm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone }),
+        body: JSON.stringify({ name, email, phone, countryCode, leadType: "signup" }),
       });
 
       const crmData = await crmRes.json();
@@ -107,7 +109,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const authRes = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, action: "signup", name, phone }),
+        body: JSON.stringify({ email, action: "signup", name, phone, countryCode }),
       });
 
       const authData = await authRes.json();

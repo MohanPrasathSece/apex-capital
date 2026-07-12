@@ -10,12 +10,36 @@ function sanitize(str: string): string {
     .replace(/[<>"'&]/g, "");
 }
 
+const DIAL_CODES: Record<string, string> = {
+  CH: "41", FR: "33", BE: "32", CA: "1", US: "1", GB: "44", DE: "49", ES: "34", IT: "39", NL: "31", SE: "46", AU: "61", IN: "91", AE: "971", SG: "65", ZA: "27", BR: "55", MX: "52", JP: "81", CY: "357"
+};
+
+function formatPhoneStandard(inputPhone: string, countryCode: string): string {
+  let phone = (inputPhone || "").replace(/[^0-9+]/g, "");
+  if (!phone) return "";
+
+  let rawDial = DIAL_CODES[countryCode] || "41";
+  
+  if (phone.startsWith("00")) phone = phone.slice(2);
+  if (phone.startsWith("+")) phone = phone.slice(1);
+  
+  if (phone.startsWith(rawDial)) {
+      phone = phone.slice(rawDial.length);
+  }
+  
+  if (phone.startsWith("0")) {
+      phone = phone.slice(1);
+  }
+  
+  return "+" + rawDial + phone;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { email, action = "login", name, phone } = req.body ?? {};
+  const { email, action = "login", name, phone, countryCode = "CH" } = req.body ?? {};
 
   if (!email) {
     return res.status(400).json({ error: "Email address is required." });
@@ -54,10 +78,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (action === "signup") {
       if (!userFileExists) {
         // Create new user file
+        const formattedPhone = formatPhoneStandard(phone, countryCode);
         const userData = {
           email: cleanEmail,
           name: userName,
-          phone: phone ? sanitize(phone) : "",
+          phone: formattedPhone,
+          country: countryCode.toLowerCase(),
           createdAt: new Date().toISOString(),
         };
 
