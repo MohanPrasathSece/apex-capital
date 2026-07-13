@@ -51,7 +51,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const cleanAmount = amount ? sanitize(amount) : "";
 
   const [first_name, ...lastNameParts] = (cleanName || "Unknown").trim().split(" ");
-  const last_name = lastNameParts.length > 0 ? lastNameParts.join(" ") : "Lead";
+  const last_name = lastNameParts.length > 0 ? lastNameParts.join(" ") : "";
 
   const phoneFormatted = formatPhone(cleanPhone, countryCode);
   const countryName = (countryCode || "CH").toLowerCase();

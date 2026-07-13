@@ -4,6 +4,7 @@ import { useAuth } from "@/lib/auth";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { CountrySelect } from "@/components/ui/country-select";
+import { COUNTRY_PHONE_PATTERNS } from "@/lib/phoneCountries";
 
 export function AuthModals() {
   const { modal, closeModal, login, signup, openLogin, openSignup } = useAuth();
