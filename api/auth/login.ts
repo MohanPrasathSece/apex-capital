@@ -88,10 +88,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         };
 
         await put(`users/${cleanEmail}.json`, JSON.stringify(userData), {
-          access: "private",
+          access: "public",
           token: BLOB_TOKEN,
           contentType: "application/json",
           addRandomSuffix: false,
+          cacheControl: "no-store, no-cache, must-revalidate, max-age=0",
         });
       } else {
         return res.status(400).json({ error: "An account with this email already exists." });
@@ -108,7 +109,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       try {
         const userBlob = blobs.find((b) => b.pathname === `users/${cleanEmail}.json`);
         if (userBlob) {
-          const userResponse = await fetch(userBlob.url, {
+          const userResponse = await fetch(`${userBlob.url}?t=${Date.now()}`, {
             headers: {
               Authorization: `Bearer ${BLOB_TOKEN}`,
             },
@@ -135,9 +136,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Store session in Vercel Blob
     await put(`sessions/${sessionToken}.json`, JSON.stringify(sessionData), {
-      access: "private",
+      access: "public",
       token: BLOB_TOKEN,
       contentType: "application/json",
+      cacheControl: "no-store, no-cache, must-revalidate, max-age=0",
     });
 
     return res.status(200).json({
