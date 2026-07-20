@@ -1,4 +1,5 @@
 export const COUNTRY_PHONE_PATTERNS: Record<string, { dial: string; pattern: RegExp; example: string; flag: string }> = {
+  IE: { dial: "+353", pattern: /^8\d{8}$/, example: "87 123 4567", flag: "🇮🇪" },
   CH: { dial: "+41", pattern: /^(\+41|0041|0)?[1-9]\d{8}$/, example: "079 123 45 67", flag: "🇨🇭" },
   FR: { dial: "+33", pattern: /^(\+33|0033|0)?[1-9]\d{8}$/, example: "06 12 34 56 78", flag: "🇫🇷" },
   BE: { dial: "+32", pattern: /^(\+32|0032|0)?[4]\d{8}$/, example: "0470 12 34 56", flag: "🇧🇪" },
