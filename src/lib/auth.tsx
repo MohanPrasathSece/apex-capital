@@ -144,7 +144,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   function logout() {
     setUser(null);
     localStorage.removeItem(SESSION_KEY);
-    toast.success("Signed out successfully.");
+    toast.success("Thank you for contacting us. Your message has been received, and our team will get back to you shortly.");
   }
 
   return (

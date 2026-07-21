@@ -58,7 +58,7 @@ export function AuthModals() {
       } else {
         const res = await signup(name, email, phone, countryCode);
         if (res.success) {
-          toast.success("Compte créé avec succès.");
+          toast.success("Merci de nous avoir contactés. Votre message a bien été reçu et notre équipe vous répondra dans les plus brefs délais.");
           setEmail("");
           setName("");
           setPhone("");

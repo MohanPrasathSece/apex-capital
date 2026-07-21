@@ -80,7 +80,7 @@ export function ContactSection() {
 
       if (res.ok && data.success) {
         setSubmitted(true);
-        toast.success("Demande envoyée avec succès.");
+        toast.success("Merci de nous avoir contactés. Votre message a bien été reçu et notre équipe vous répondra dans les plus brefs délais.");
       } else {
         toast.error("Échec de l'envoi de la demande. Veuillez réessayer.");
       }
